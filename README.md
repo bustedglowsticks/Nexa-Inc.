@@ -1,187 +1,83 @@
-# Nexa, Inc. - Utility Contractor Software Platform
+# Nexa, Inc. - Agentic AI Software Platform
 
 ## 🚀 Overview
 
-Nexa, Inc. is a modern, responsive landing page for a utility-centered contractor software company. The website showcases the company's AI/ML-driven platform ecosystem consisting of seven specialized pillars designed to transform utility contractor operations.
+This project is the official website for **Nexa, Inc.**, a software company specializing in AI-driven solutions for utility contractors. The site is designed with a high-tech, agentic AI aesthetic, featuring a dark theme with vibrant glowing accents. It serves as a marketing and informational hub, showcasing the company's ecosystem of products and providing an interactive product demonstration.
 
 ## 🌟 Features
 
-### Core Platform Components
-- **Nexa Core**: Central platform with shared foundation services
-- **Nexa Storm**: Emergency storm deployment and crew management
-- **Nexa Design**: Design and estimation with GIS integration
-- **Nexa Finance**: Billing, payroll, and financial analytics
-- **Nexa Safety**: Safety compliance and incident reporting
-- **Nexa Grid**: Drone-based utility grid inspections
-- **Nexa Insights**: Executive dashboards and predictive analytics
+### Key Website Sections & Functionality
+- **High-Tech Dark Theme**: A modern, visually striking design using a dark color palette, glowing text, and animated backgrounds to create an immersive, futuristic feel.
+- **Interactive 'Product in Action' Demo**: A step-by-step walkthrough that simulates the core workflow of the Nexa platform, from uploading a job package to receiving AI-powered analysis.
+- **Advanced Ecosystem Visualization**: A dynamic canvas animation that visually represents the **NEXA CORE** platform and its seven pillars, complete with a foundational element to show how all pillars are interconnected.
+- **Responsive Design**: Fully responsive layout built with Bootstrap 5, ensuring a seamless experience across desktops, tablets, and mobile devices.
+- **AOS Animations**: Subtle and engaging animations on scroll, powered by the AOS (Animate On Scroll) library.
+- **Interactive Contact Form**: A client-side validated form for user inquiries.
+- **Utility Components**: Includes a custom notification system, a scroll-to-top button, and parallax effects.
 
-### Website Features
-- ✨ Modern, responsive Bootstrap 5 design
-- 🎨 Custom CSS with gradient animations and hover effects
-- 📱 Mobile-first responsive layout
-- 🔄 Smooth scrolling navigation
-- 💫 AOS (Animate On Scroll) animations
-- 📝 Interactive contact form with validation
-- 🎯 Service-specific demo request options
-- 🌊 Parallax scrolling effects
-- ⬆️ Scroll-to-top button
-- 🔔 Toast notification system
+## 🛠️ Installation & Local Development
 
-## 📋 Prerequisites
+This is a static website and requires no complex setup. To run it locally, simply open the `index.html` file in a modern web browser.
 
-This is a static website that requires:
-- A web server (Apache, Nginx, or any static hosting service)
-- Modern web browser with JavaScript enabled
-- Internet connection (for CDN resources)
+For a more robust development experience, you can use a simple local server:
 
-## 🛠️ Installation & Deployment
+1.  **Using Python's HTTP Server** (if you have Python installed):
+    ```bash
+    # For Python 3
+    python -m http.server
+    ```
 
-### Option 1: Deploy to GitHub Pages
+2.  **Using Node.js `live-server`**:
+    ```bash
+    # Install live-server globally (if you haven't already)
+    npm install -g live-server
 
-1. Create a new GitHub repository
-2. Upload all files to the repository
-3. Go to Settings → Pages
-4. Select source branch (main/master)
-5. Your site will be available at `https://[username].github.io/[repository-name]`
-
-### Option 2: Deploy to Netlify
-
-1. Visit [Netlify](https://www.netlify.com)
-2. Drag and drop the project folder to deploy
-3. Configure custom domain (optional)
-4. Enable form submissions in Netlify settings
-
-### Option 3: Deploy to Traditional Web Hosting
-
-1. Upload all files via FTP/SFTP to your web hosting root directory
-2. Ensure index.html is in the root folder
-3. No server-side configuration needed (pure static site)
-
-### Option 4: Deploy to Custom Domain (nexa-us.io)
-
-1. **DNS Configuration**:
-   ```
-   Type: A Record
-   Name: @
-   Value: [Your hosting IP address]
-   
-   Type: CNAME
-   Name: www
-   Value: nexa-us.io
-   ```
-
-2. **SSL Certificate**:
-   - Use Let's Encrypt for free SSL
-   - Or configure through your hosting provider
-
-3. **Upload Files**:
-   - Place all files in the public_html or www directory
-   - Ensure proper file permissions (644 for files, 755 for directories)
+    # Run the server in the project directory
+    live-server
+    ```
 
 ## 📁 Project Structure
 
 ```
-nexa-website/
+personal-website/
 │
-├── index.html          # Main landing page
-├── styles.css          # Custom CSS styles
-├── script.js           # JavaScript functionality
-└── README.md          # Project documentation
+├── index.html          # Main HTML file for the website
+├── styles.css          # All custom CSS styles
+├── script.js           # Core JavaScript for interactivity and animations
+└── README.md           # This documentation file
 ```
 
-## 🔧 Configuration
+## 🔧 Customization
 
-### Contact Form Setup
+### Color Palette
 
-The contact form currently logs submissions to the console. To enable backend functionality:
+The color scheme can be easily customized by editing the CSS root variables in `styles.css`:
 
-1. **Email Service Integration**:
-   ```javascript
-   // Replace the form submission handler in script.js
-   // with your backend API endpoint
-   fetch('https://your-api-endpoint.com/contact', {
-       method: 'POST',
-       headers: {
-           'Content-Type': 'application/json',
-       },
-       body: JSON.stringify(formData)
-   })
-   ```
-
-2. **Third-Party Services**:
-   - Formspree: `https://formspree.io`
-   - EmailJS: `https://www.emailjs.com`
-   - Netlify Forms (if using Netlify hosting)
-
-### Customization
-
-1. **Colors**: Edit CSS variables in `styles.css`:
-   ```css
-   :root {
-       --primary-color: #4361ee;
-       --secondary-color: #3f37c9;
-       --accent-color: #7209b7;
-   }
-   ```
-
-2. **Content**: Update text directly in `index.html`
-
-3. **Icons**: Using Bootstrap Icons - browse available icons at [icons.getbootstrap.com](https://icons.getbootstrap.com)
-
-## 🌐 Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
-
-## 📱 Responsive Breakpoints
-
-- Mobile: < 576px
-- Tablet: 576px - 768px
-- Desktop: > 768px
-
-## 🚀 Performance Optimization
-
-1. **Enable Compression**:
-   - Gzip/Brotli compression on server
-   - Minify CSS and JavaScript for production
-
-2. **Caching Headers**:
-   ```apache
-   # .htaccess example
-   <IfModule mod_expires.c>
-       ExpiresActive On
-       ExpiresByType text/css "access plus 1 month"
-       ExpiresByType application/javascript "access plus 1 month"
-   </IfModule>
-   ```
-
-3. **CDN Usage**:
-   - Bootstrap and libraries loaded from CDN
-   - Consider using Cloudflare for additional caching
-
-## 📊 Analytics Integration
-
-Add Google Analytics or similar:
-```html
-<!-- Add before closing </head> tag -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'GA_MEASUREMENT_ID');
-</script>
+```css
+:root {
+    --bg-dark-primary: #0d0d1a;
+    --bg-dark-secondary: #1a1a2e;
+    --glow-primary: #00f2ff;      /* Primary cyan glow */
+    --glow-secondary: #8a2be2;     /* Secondary purple glow */
+    --text-primary: #e0e0e0;
+    --text-secondary: #a0a0c0;
+    --border-color: rgba(0, 242, 255, 0.2);
+}
 ```
 
-## 🔒 Security Considerations
+### Content
+All text and section content can be modified directly within `index.html`.
 
-1. **Form Validation**: Client-side validation implemented
-2. **HTTPS**: Always use SSL certificate in production
-3. **Content Security Policy**: Add CSP headers for production
-4. **Input Sanitization**: Implement server-side validation for forms
+### Icons
+The site uses **Bootstrap Icons**. You can find and choose new icons from the [official Bootstrap Icons library](https://icons.getbootstrap.com).
+
+## 🚀 Deployment
+
+As a static website, this project can be deployed to any static hosting provider.
+
+1.  **Netlify**: Drag and drop the project folder into the Netlify dashboard for an instant, free deployment.
+2.  **Vercel**: Connect your Git repository for seamless CI/CD and automated deployments.
+3.  **GitHub Pages**: Push the code to a GitHub repository and enable GitHub Pages in the settings.
 
 ## 📝 License
 
@@ -190,20 +86,5 @@ Copyright © 2024 Nexa, Inc. All rights reserved.
 ## 📧 Support
 
 For questions or support, contact:
-- Email: founder@nexa-us.io
-- Website: https://nexa-us.io
-
-## 🎯 Future Enhancements
-
-- [ ] Backend API integration for contact form
-- [ ] Multi-language support
-- [ ] Dark/Light theme toggle
-- [ ] Blog section
-- [ ] Customer testimonials
-- [ ] Live chat integration
-- [ ] Advanced analytics dashboard
-- [ ] PWA (Progressive Web App) features
-
----
-
-**Built with ❤️ by Nexa, Inc. - Transforming Utility Contractor Operations with AI**
+- **Email**: founder@nexa-us.io
+- **Website**: https://nexa-us.io

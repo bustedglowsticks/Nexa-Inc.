@@ -1,0 +1,4 @@
+[build]
+  # This is a static site, so no build command is needed.
+  # The publish directory is the root of the project where index.html is located.
+  publish = "."
