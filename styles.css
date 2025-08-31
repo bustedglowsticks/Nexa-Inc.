@@ -11,14 +11,13 @@
 /* ----------------- 1. Root Variables ----------------- */
 /* Defines the core color palette and reusable properties for the dark theme. */
 :root {
-    --bg-dark-primary: #0d0d1a;
-    --bg-dark-secondary: #1a1a2e;
-    --glow-primary: #00f2ff;
-    --glow-secondary: #8a2be2;
-    --text-primary: #e0e0e0;
-    --text-secondary: #a0a0c0;
-    --border-color: rgba(0, 242, 255, 0.2);
-    --shadow-glow: 0 0 15px rgba(0, 242, 255, 0.3), 0 0 25px rgba(138, 43, 226, 0.2);
+    /* New NEXA Palette */
+    --bg-charcoal: #2B2B2B;
+    --bg-dark-slate: #394048;
+    --text-muted-beige: #E7E2D9;
+    --accent-electric-blue: #2F7AFE;
+
+    --border-color: rgba(255, 255, 255, 0.1);
 }
 
 /* ----------------- 2. Global Styles ----------------- */
@@ -31,8 +30,8 @@
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    color: var(--text-primary);
-    background-color: var(--bg-dark-primary);
+    color: var(--text-muted-beige);
+    background-color: var(--bg-charcoal);
     overflow-x: hidden;
 }
 
@@ -47,18 +46,20 @@ section {
 }
 
 .bg-light .text-muted {
-    color: var(--text-secondary) !important;
+    color: var(--text-dark) !important;
 }
 
 /* ----------------- 3. Typography ----------------- */
 /* Styles for headings and custom text effects like gradients. */
 h1, h2, h3, h4, h5, h6 {
-    color: #fff;
-    text-shadow: 0 0 5px var(--glow-primary);
+    font-family: 'Inter', sans-serif;
+    color: var(--text-muted-beige);
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
 .text-gradient {
-    background: linear-gradient(90deg, var(--glow-primary), var(--glow-secondary));
+    background: linear-gradient(90deg, var(--glow-cyan), var(--glow-purple));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -67,103 +68,261 @@ h1, h2, h3, h4, h5, h6 {
 /* ----------------- 4. Navigation Bar ----------------- */
 /* Styling for the main navigation bar, including the scrolled state. */
 #mainNav {
-    background: rgba(13, 13, 26, 0.8);
-    backdrop-filter: blur(12px);
+    background-color: rgba(43, 43, 43, 0.8); /* --bg-charcoal with alpha */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-color);
     transition: all 0.3s ease;
     padding: 1rem 0;
 }
 
 #mainNav.navbar-scrolled {
-    background: rgba(26, 26, 46, 0.9);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: rgba(43, 43, 43, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .navbar-brand {
-    font-size: 1.5rem;
-    color: #fff !important;
-    text-shadow: 0 0 8px var(--glow-primary);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-muted-beige) !important;
 }
 
 .nav-link {
-    color: var(--text-secondary) !important;
+    color: var(--text-muted-beige) !important;
     font-weight: 500;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
     position: relative;
+    opacity: 0.8;
 }
 
-.nav-link:hover {
-    color: var(--glow-primary) !important;
-    text-shadow: 0 0 5px var(--glow-primary);
+.nav-link:hover, .nav-link.active {
+    color: var(--accent-electric-blue) !important;
+    opacity: 1;
 }
 
 /* ----------------- 5. Hero Section ----------------- */
 /* Full-screen hero section with a pulsating background gradient. */
-.hero-section {
-    background: var(--bg-dark-primary);
-    min-height: 100vh;
+.hero-section-new {
+    background-color: var(--bg-charcoal);
+    color: var(--text-muted-beige);
+    padding: 140px 0;
+}
+
+.hero-headline {
+    font-size: 56px; /* H1 size */
+    font-weight: 700;
+    letter-spacing: -1.5px; /* Tighter letter-spacing */
+    line-height: 1.1;
+}
+
+.hero-headline-muted {
+    color: #888; /* Muted part of the headline */
+}
+
+.hero-subhead {
+    font-size: 18px; /* Body size */
+    color: var(--text-muted-beige);
+    opacity: 0.9;
+    max-width: 550px;
+    margin-top: 20px;
+}
+
+.hero-cta-group {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.hero-cta-group .btn-primary {
+    background-color: var(--accent-electric-blue);
+    border-color: var(--accent-electric-blue);
+    color: white;
+    font-weight: 500;
+}
+
+.hero-cta-group .btn-outline-light {
+    border-color: var(--bg-dark-slate);
+    color: var(--text-muted-beige);
+}
+
+.hero-badge-strip {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 12px;
+    color: var(--text-muted-beige);
+}
+
+.hero-badge-strip li {
+    background-color: rgba(57, 64, 72, 0.6); /* Dark Slate with alpha */
+    padding: 5px 10px;
+    border-radius: 6px;
     display: flex;
     align-items: center;
-    position: relative;
-    overflow: hidden;
-    border-bottom: none;
-    z-index: 1;
+    gap: 6px;
 }
 
-.hero-section::before {
-    content: '';
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    z-index: -1;
-    background-image: radial-gradient(circle at 25% 25%, var(--glow-secondary) 0%, transparent 30%),
-                      radial-gradient(circle at 75% 75%, var(--glow-primary) 0%, transparent 30%);
-    opacity: 0.1;
-    animation: pulse-background 10s infinite alternate;
+.hero-visual-mockup {
+    background-color: var(--bg-dark-slate);
+    min-height: 360px;
+    border-radius: 16px; /* rounded-xl */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
-@keyframes pulse-background {
-    from { transform: scale(1); }
-    to { transform: scale(1.1); }
+/* ============================================= */
+/* ================ VALUE GRID ================= */
+/* ============================================= */
+#value-grid {
+    background-color: var(--bg-dark-slate);
+    padding: 80px 0;
 }
 
-.hero-waves {
-    display: none; /* Removing old waves for a cleaner look */
-}
-
-/* ----------------- 6. Card Components ----------------- */
-/* Unified styling for various card elements used across the site. */
-.pillar-card, .stat-card, .contact-form, .eco-feature {
-    background: linear-gradient(145deg, var(--bg-dark-secondary), #2c2c4e);
+.value-card {
+    background-color: var(--bg-charcoal);
+    padding: 30px;
+    border-radius: 16px; /* rounded-xl */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     border: 1px solid var(--border-color);
-    border-radius: 15px;
-    padding: 2rem;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
     transition: all 0.3s ease;
-    position: relative;
 }
 
-.pillar-card:hover, .stat-card:hover, .eco-feature:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-glow);
-    border-color: var(--glow-primary);
+.value-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-electric-blue);
 }
 
-.core-card {
-    background: linear-gradient(145deg, var(--glow-secondary), var(--glow-primary));
-    color: white;
-    box-shadow: var(--shadow-glow);
+.value-card h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text-muted-beige);
 }
 
-.core-card p, .core-card h3 {
-    color: white;
-    text-shadow: none;
+/* ============================================= */
+/* ============== HOW IT WORKS ================= */
+/* ============================================= */
+#how-it-works {
+    background-color: var(--bg-charcoal);
+    padding: 80px 0;
 }
 
-.pillar-icon i, .eco-feature i, .stat-number {
-    color: var(--glow-primary);
-    text-shadow: 0 0 10px var(--glow-primary);
+.step-item .step-number {
+    width: 50px;
+    height: 50px;
+    background-color: var(--bg-dark-slate);
+    border: 2px solid var(--accent-electric-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent-electric-blue);
+    transition: all 0.3s ease;
 }
+
+.step-item:hover .step-number {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px var(--accent-electric-blue);
+}
+
+.step-item h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-muted-beige);
+    margin-bottom: 10px;
+}
+
+.step-item p {
+    color: var(--text-muted-beige);
+    opacity: 0.8;
+}
+
+
+/* ============================================= */
+/* ================ PILLARS ==================== */
+/* ============================================= */
+.pillars-section {
+    background-color: var(--bg-charcoal);
+    padding: 80px 0;
+}
+
+.pillar-card {
+    background-color: var(--bg-dark-slate);
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    height: 100%;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.pillar-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(47, 122, 254, 0.2);
+    border-color: var(--accent-electric-blue);
+}
+
+.pillar-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(47, 122, 254, 0.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-electric-blue);
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.badge-tech {
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    background-color: rgba(47, 122, 254, 0.1);
+    color: var(--text-muted-beige);
+    border-radius: 6px;
+    border: 1px solid rgba(47, 122, 254, 0.2);
+}
+
+.link-secondary {
+    color: var(--text-muted-beige);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.link-secondary:hover {
+    color: var(--accent-electric-blue);
+    border-bottom-color: var(--accent-electric-blue);
+}
+
+/* CTA Band */
+.cta-band {
+    background-color: var(--bg-dark-slate);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 40px;
+}
+
+.cta-band h3 {
+    color: var(--text-white);
+}
+
+.cta-band p {
+    color: var(--text-muted-beige);
+}
+
 /* ----------------- 7. Ecosystem Visualization ----------------- */
 /* Styles for the interactive ecosystem diagram, including nodes and canvas. */
 
@@ -179,7 +338,7 @@ h1, h2, h3, h4, h5, h6 {
 .eco-node-inner {
     width: 100%;
     height: 100%;
-    background: var(--bg-dark-secondary);
+    background: var(--bg-dark-slate);
     border: 1px solid var(--border-color);
     border-radius: 50%;
     display: flex;
@@ -187,7 +346,7 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: var(--text-primary);
+    color: var(--text-muted-beige);
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     animation: pulse-node 4s infinite ease-in-out;
     animation-delay: var(--delay, 0s);
@@ -195,13 +354,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .eco-node-inner i {
     font-size: 1.2rem;
-    color: var(--glow-primary);
+    color: var(--accent-electric-blue);
     margin-bottom: 5px;
 }
 
 .eco-node-inner span {
     font-size: 0.7rem;
     font-weight: 500;
+    color: var(--text-muted-beige);
 }
 
 .eco-center {
@@ -211,9 +371,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .eco-center .eco-node-inner {
-    background: var(--bg-dark-primary);
-    border: 2px solid var(--glow-primary);
-    box-shadow: var(--shadow-glow);
+    background: var(--bg-charcoal);
+    border: 2px solid var(--accent-electric-blue);
+    box-shadow: 0 0 20px rgba(47, 122, 254, 0.5);
     animation-name: pulse-center;
     animation-duration: 3s;
 }
@@ -232,13 +392,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes pulse-center {
-    0%, 100% { box-shadow: 0 0 15px var(--glow-primary); }
-    50% { box-shadow: 0 0 30px var(--glow-primary), 0 0 10px var(--glow-secondary) inset; }
+    0%, 100% { box-shadow: 0 0 20px rgba(47, 122, 254, 0.5); }
+    50% { box-shadow: 0 0 35px rgba(47, 122, 254, 0.7); }
 }
 
 @keyframes pulse-node {
-    0%, 100% { box-shadow: 0 0 5px var(--border-color); }
-    50% { box-shadow: 0 0 15px var(--glow-primary); }
+    0%, 100% { box-shadow: 0 0 5px rgba(0,0,0,0.3); }
+    50% { box-shadow: 0 0 15px rgba(47, 122, 254, 0.4); }
 }
 
 #ecosystem-canvas {
@@ -255,9 +415,9 @@ h1, h2, h3, h4, h5, h6 {
     left: 15%;
     right: 15%;
     height: 10px;
-    background: var(--glow-primary);
+    background: var(--accent-electric-blue);
     border-radius: 5px;
-    box-shadow: 0 0 15px var(--glow-primary), 0 0 25px var(--glow-primary);
+    box-shadow: 0 0 15px var(--accent-electric-blue), 0 0 25px var(--accent-electric-blue);
     opacity: 0.6;
     z-index: 2;
 }
@@ -289,66 +449,65 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .form-control {
-    background-color: var(--bg-dark-secondary);
+    background-color: var(--bg-dark-slate);
     border: 1px solid var(--border-color);
-    border-radius: 10px;
-    padding: 0.75rem 1rem;
-    color: var(--text-primary);
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: var(--text-muted-beige);
     transition: all 0.3s ease;
 }
 
 .form-control:focus {
-    border-color: var(--glow-primary);
-    box-shadow: 0 0 0 0.2rem rgba(0, 242, 255, 0.25);
-    background-color: var(--bg-dark-primary);
+    border-color: var(--accent-electric-blue);
+    box-shadow: 0 0 0 3px rgba(47, 122, 254, 0.25);
+    background-color: var(--bg-charcoal);
 }
 
 /* ----------------- 10. Buttons ----------------- */
 /* Global button styles for primary and outline variants. */
 .btn {
-    padding: 0.75rem 2rem;
-    border-radius: 50px;
+    padding: 12px 28px;
+    border-radius: 8px;
     font-weight: 600;
     transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border: 2px solid transparent;
+    text-transform: none;
+    letter-spacing: 0;
+    border: 1px solid transparent;
 }
 
 .btn-primary {
-    background: var(--glow-primary);
-    color: var(--bg-dark-primary);
-    box-shadow: 0 0 15px var(--glow-primary);
+    background-color: var(--accent-electric-blue);
+    border-color: var(--accent-electric-blue);
+    color: white;
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 0 25px var(--glow-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(47, 122, 254, 0.4);
 }
 
 .btn-outline-light {
-    border-color: var(--glow-primary);
-    color: var(--glow-primary);
+    border-color: var(--bg-dark-slate);
+    color: var(--text-muted-beige);
 }
 
 .btn-outline-light:hover {
-    background: var(--glow-primary);
-    color: var(--bg-dark-primary);
-    box-shadow: 0 0 15px var(--glow-primary);
+    background-color: var(--bg-dark-slate);
+    color: white;
 }
 
 /* ----------------- 11. Product in Action Demo ----------------- */
 /* Styles for the interactive product demonstration component. */
 #product-demo {
-    background-color: var(--bg-dark-secondary);
+    background-color: var(--bg-charcoal);
+    padding: 80px 0;
 }
 
 .demo-container {
-    background: var(--bg-dark-primary);
+    background: var(--bg-dark-slate);
     border: 1px solid var(--border-color);
-    border-radius: 15px;
+    border-radius: 16px;
     padding: 2rem;
-    box-shadow: var(--shadow-glow);
 }
 
 .demo-steps {
@@ -361,14 +520,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .step-item {
     text-align: center;
-    color: var(--text-secondary);
+    color: var(--text-muted-beige);
     cursor: pointer;
     transition: all 0.3s ease;
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
 .step-item.active {
-    color: var(--glow-primary);
+    color: var(--accent-electric-blue);
     opacity: 1;
     transform: scale(1.1);
 }
@@ -376,7 +535,7 @@ h1, h2, h3, h4, h5, h6 {
 .step-icon {
     width: 60px;
     height: 60px;
-    background: var(--bg-dark-secondary);
+    background: var(--bg-charcoal);
     border: 2px solid var(--border-color);
     border-radius: 50%;
     display: flex;
@@ -387,17 +546,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .step-item.active .step-icon {
-    border-color: var(--glow-primary);
-    box-shadow: 0 0 10px var(--glow-primary);
+    border-color: var(--accent-electric-blue);
+    box-shadow: 0 0 15px var(--accent-electric-blue);
 }
 
 .step-icon i {
     font-size: 1.5rem;
     transition: all 0.3s ease;
+    color: var(--text-muted-beige);
 }
 
 .step-item.active .step-icon i {
-    color: var(--glow-primary);
+    color: var(--accent-electric-blue);
 }
 
 .demo-content-wrapper {
@@ -424,21 +584,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .foreman-view.card {
-    background: var(--bg-dark-secondary);
+    background: var(--bg-charcoal);
     border: 1px solid var(--border-color);
+    border-radius: 12px;
     text-align: left;
     max-width: 500px;
     margin: 0 auto;
 }
 
 .foreman-view .card-header {
-    background-color: rgba(0, 242, 255, 0.1);
+    background-color: var(--bg-dark-slate);
     border-bottom: 1px solid var(--border-color);
+    color: var(--text-muted-beige);
 }
 
 .foreman-view .list-group-item {
     background-color: transparent;
     border-bottom: 1px solid var(--border-color);
+    color: var(--text-muted-beige);
 }
 
 .foreman-view .list-group-item:last-child {
@@ -446,43 +609,49 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .ai-feedback.alert {
-    background-color: rgba(255, 193, 7, 0.1);
-    border: 1px solid #ffc107;
-    color: #ffc107;
+    background-color: rgba(47, 122, 254, 0.1);
+    border: 1px solid var(--accent-electric-blue);
+    color: var(--accent-electric-blue);
     text-align: left;
+    border-radius: 8px;
 }
 
 .ai-feedback .alert-heading {
-    color: #ffc107;
+    color: var(--accent-electric-blue);
 }
 
 
 /* ----------------- 12. Footer ----------------- */
 /* Styling for the site footer and social media links. */
 .footer {
-    background: var(--bg-dark-secondary);
-    color: var(--text-secondary);
+    background: var(--bg-dark-slate);
+    color: var(--text-muted-beige);
+    padding: 40px 0;
     border-top: 1px solid var(--border-color);
+}
+
+.footer p {
+    opacity: 0.7;
 }
 
 .social-links a {
     width: 40px;
     height: 40px;
-    background: transparent;
+    background: var(--bg-charcoal);
     border: 1px solid var(--border-color);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--text-secondary);
+    color: var(--text-muted-beige);
     transition: all 0.3s ease;
 }
 
 .social-links a:hover {
-    color: var(--glow-primary);
-    border-color: var(--glow-primary);
-    box-shadow: var(--shadow-glow);
-    transform: translateY(-5px);
+    color: white;
+    background-color: var(--accent-electric-blue);
+    border-color: var(--accent-electric-blue);
+    transform: translateY(-3px);
 }
 
 /* ----------------- 13. Loading Animation ----------------- */
@@ -491,7 +660,7 @@ h1, h2, h3, h4, h5, h6 {
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: var(--bg-dark-primary);
+    background: var(--bg-charcoal);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -507,8 +676,8 @@ h1, h2, h3, h4, h5, h6 {
 .loader-inner {
     width: 50px;
     height: 50px;
-    border: 3px solid var(--border-color);
-    border-top-color: var(--glow-primary);
+    border: 3px solid var(--bg-dark-slate);
+    border-top-color: var(--accent-electric-blue);
     border-radius: 50%;
     animation: spin 1s linear infinite;
 }

@@ -30,12 +30,12 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#pillars">Solutions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#pillars">Products</a></li>
                     <li class="nav-item"><a class="nav-link" href="#ecosystem">Ecosystem</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#product-demo">Demo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="security.html">Security</a></li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-primary text-white px-3 ms-2" href="#demo">Request Demo</a>
+                        <a class="nav-link btn btn-primary text-white px-3 ms-2" href="#contact">Book a Demo</a>
                     </li>
                 </ul>
             </div>
@@ -45,250 +45,133 @@
     <!-- ============================================= -->
     <!-- ================= HERO SECTION ================ -->
     <!-- ============================================= -->
-    <header class="hero-section">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
+    <header class="hero-section-new">
+        <div class="container">
+            <div class="row align-items-center">
                 <div class="col-lg-7">
-                    <h1 class="display-3 fw-bold text-white mb-4" data-aos="fade-right">
-                        Revolutionizing <span class="text-gradient">Utility Infrastructure</span> Management
+                    <h1 class="hero-headline">
+                        Contractor-first utility ops. <span class="hero-headline-muted">Photos in, compliance out.</span>
                     </h1>
-                    <p class="lead text-white-50 mb-4" data-aos="fade-right" data-aos-delay="100">
-                        One Backbone. Seven Pillars. Complete Ecosystem.
-                        Replace legacy systems with AI-powered, utility-first platform.
+                    <p class="hero-subhead">
+                        NEXA Core for day-to-day operations, NEXA Storm for rapid outage deployments—built by linemen, secured for utilities.
                     </p>
-                    <div data-aos="fade-up" data-aos-delay="200">
-                        <a href="#pillars" class="btn btn-primary btn-lg me-3">Explore Solutions</a>
-                        <a href="#demo" class="btn btn-outline-light btn-lg">Schedule Demo</a>
+                    <div class="hero-cta-group">
+                        <a href="#contact" class="btn btn-primary btn-lg">Book a 15-min demo</a>
+                        <a href="/security.html" class="btn btn-outline-light btn-lg">View architecture & security</a>
                     </div>
+                    <ul class="hero-badge-strip">
+                        <li><i class="bi bi-shield-check"></i> Auth0 OIDC</li>
+                        <li><i class="bi bi-server"></i> Postgres RLS</li>
+                        <li><i class="bi bi-key-fill"></i> Per-tenant KMS</li>
+                        <li><i class="bi bi-journal-check"></i> Audit-ready logs</li>
+                    </ul>
                 </div>
-                <div class="col-lg-5" data-aos="fade-left">
-                    <div class="hero-graphic">
-                        <div class="floating-card">
-                            <i class="bi bi-lightning-charge-fill"></i>
-                            <span>Smart Grid</span>
-                        </div>
-                        <div class="floating-card">
-                            <i class="bi bi-shield-check"></i>
-                            <span>Safety First</span>
-                        </div>
-                        <div class="floating-card">
-                            <i class="bi bi-graph-up-arrow"></i>
-                            <span>AI Insights</span>
+                <div class="col-lg-5">
+                    <div class="hero-visual-mockup">
+                        <!-- Placeholder for one clean mobile mock (Storm) + one desktop mock (Core) -->
+                        <div class="p-4 text-center text-muted-beige opacity-50">
+                            <p>Product Mockup Placeholder</p>
+                            <p><small>Job Photo → Spec Match → Foreman Alert</small></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="hero-waves"></div>
     </header>
 
     <!-- ============================================= -->
-    <!-- =============== ABOUT SECTION =============== -->
+    <!-- ================ PILLARS ==================== -->
     <!-- ============================================= -->
-    <section id="about" class="py-5">
+    <section id="pillars" aria-labelledby="pillars-title" class="pillars-section">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <h2 class="display-5 fw-bold mb-4">The Future of Utility Management</h2>
-                    <p class="lead mb-4">
-                        Nexa, Inc. is a comprehensive utility-centered contractor software platform that unifies operations, 
-                        enhances safety, and drives efficiency through AI-powered insights.
-                    </p>
-                    <div class="feature-list">
-                        <div class="feature-item">
-                            <i class="bi bi-check-circle-fill text-primary"></i>
-                            <span>Centralized Data Lake with AI/ML Engine</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="bi bi-check-circle-fill text-primary"></i>
-                            <span>Unified Identity & Access Management</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="bi bi-check-circle-fill text-primary"></i>
-                            <span>Real-time Compliance & Audit Logging</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="bi bi-check-circle-fill text-primary"></i>
-                            <span>Integrated API Gateway & Messaging</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <h3 class="stat-number">7</h3>
-                            <p class="stat-label">Integrated Pillars</p>
-                        </div>
-                        <div class="stat-card">
-                            <h3 class="stat-number">100%</h3>
-                            <p class="stat-label">Cloud Native</p>
-                        </div>
-                        <div class="stat-card">
-                            <h3 class="stat-number">AI</h3>
-                            <p class="stat-label">Powered</p>
-                        </div>
-                        <div class="stat-card">
-                            <h3 class="stat-number">24/7</h3>
-                            <p class="stat-label">Real-time</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+            <header class="mb-5">
+                <p class="text-uppercase small text-muted mb-2">NEXA Platform</p>
+                <h2 id="pillars-title" class="display-5 fw-bold mb-3">
+                    The pillars of contractor-first utility ops
+                </h2>
+                <p class="lead text-secondary">
+                    One platform, built by linemen, secured for utilities. Each pillar stands alone—together they remove go-backs,
+                    accelerate close-out, and make audits boring.
+                </p>
+            </header>
 
-    <!-- ============================================= -->
-    <!-- ============== PILLARS SECTION ============== -->
-    <!-- ============================================= -->
-    <section id="pillars" class="py-5 bg-light">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="display-5 fw-bold">Seven Pillars of Excellence</h2>
-                <p class="lead text-muted">Comprehensive solutions for every aspect of utility management</p>
-            </div>
-
-            <!-- Core Platform -->
-            <div class="pillar-card core-card mb-5" data-aos="fade-up">
-                <div class="row align-items-center">
-                    <div class="col-lg-2 text-center">
-                        <div class="pillar-icon">
-                            <i class="bi bi-cpu-fill"></i>
-                        </div>
-                    </div>
-                    <div class="col-lg-10">
-                        <h3 class="fw-bold mb-3">Nexa Core</h3>
-                        <p class="mb-3">The foundation of our ecosystem - a comprehensive contractor utility platform with centralized data lake, 
-                        AI/ML engine, identity management, and API gateway.</p>
-                        <div class="tech-tags">
-                            <span class="badge bg-primary">Data Lake</span>
-                            <span class="badge bg-primary">AI/ML Engine</span>
-                            <span class="badge bg-primary">IAM</span>
-                            <span class="badge bg-primary">API Gateway</span>
-                            <span class="badge bg-primary">Compliance</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Other Pillars Grid -->
-            <div class="row g-4">
-                <!-- Storm -->
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="row g-4" role="list">
+                <!-- CORE -->
+                <div class="col-lg-4 col-md-6">
                     <div class="pillar-card h-100">
-                        <div class="pillar-header">
-                            <div class="pillar-icon-small">
+                        <div class="d-flex gap-3 mb-3">
+                            <div class="pillar-icon">
+                                <i class="bi bi-cpu-fill"></i>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h3 class="h5 fw-bold mb-2">NEXA Core</h3>
+                                <p class="text-secondary mb-0">
+                                    Day-to-day back-office automation: spec-book cross-checks, engineer approvals, and auto-filled timesheets.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2 mb-4">
+                            <span class="badge-tech">Postgres RLS</span>
+                            <span class="badge-tech">Auth0 OIDC</span>
+                            <span class="badge-tech">Per-tenant KMS</span>
+                            <span class="badge-tech">Audit logs</span>
+                        </div>
+                        <div class="d-flex gap-3 align-items-center">
+                            <a class="btn btn-primary btn-sm" href="#product-demo">Explore Core</a>
+                            <a class="link-secondary small" href="security.html#core">See architecture</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STORM -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="pillar-card h-100">
+                        <div class="d-flex gap-3 mb-3">
+                            <div class="pillar-icon">
                                 <i class="bi bi-cloud-lightning-rain-fill"></i>
                             </div>
-                            <h4 class="fw-bold">Nexa Storm</h4>
-                        </div>
-                        <p>Emergency response platform with mass SMS notifications, QR-based crew onboarding, 
-                        outage map integration, and automated timesheet management for storm events.</p>
-                        <ul class="feature-bullets">
-                            <li>Real-time storm roster management</li>
-                            <li>Utility timesheet autofill</li>
-                            <li>Emergency support coordination</li>
-                            <li>Labor agreement integration</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Design -->
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="pillar-card h-100">
-                        <div class="pillar-header">
-                            <div class="pillar-icon-small">
-                                <i class="bi bi-rulers"></i>
+                            <div class="flex-grow-1">
+                                <h3 class="h5 fw-bold mb-2">NEXA Storm</h3>
+                                <p class="text-secondary mb-0">
+                                    Rapid outage deployments: QR rostering, mass SMS, lodging, and utility-specific forms auto-filled from the field.
+                                </p>
                             </div>
-                            <h4 class="fw-bold">Nexa Design</h4>
                         </div>
-                        <p>Advanced design and estimation platform with O-Calc and GIS integration, 
-                        enabling rapid design submission and AI-powered spec validation.</p>
-                        <ul class="feature-bullets">
-                            <li>GIS map integration</li>
-                            <li>O-Calc compatibility</li>
-                            <li>AI auto-spec validation</li>
-                            <li>Minutes-to-submission workflow</li>
-                        </ul>
+                        <div class="d-flex flex-wrap gap-2 mb-4">
+                            <span class="badge-tech">Edge-ready</span>
+                            <span class="badge-tech">Offline-tolerant</span>
+                            <span class="badge-tech">PII guardrails</span>
+                        </div>
+                        <div class="d-flex gap-3 align-items-center">
+                            <a class="btn btn-primary btn-sm" href="#product-demo">Explore Storm</a>
+                            <a class="link-secondary small" href="security.html#storm">See architecture</a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Finance -->
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                <!-- GRID -->
+                <div class="col-lg-4 col-md-6">
                     <div class="pillar-card h-100">
-                        <div class="pillar-header">
-                            <div class="pillar-icon-small">
-                                <i class="bi bi-currency-dollar"></i>
-                            </div>
-                            <h4 class="fw-bold">Nexa Finance</h4>
-                        </div>
-                        <p>Complete financial management suite for contractor billing, payroll, 
-                        and cash flow analytics with predictive forecasting.</p>
-                        <ul class="feature-bullets">
-                            <li>Automated contractor billing</li>
-                            <li>Integrated payroll system</li>
-                            <li>Cash flow analytics</li>
-                            <li>Overrun prevention forecasting</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Safety -->
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
-                    <div class="pillar-card h-100">
-                        <div class="pillar-header">
-                            <div class="pillar-icon-small">
-                                <i class="bi bi-shield-fill-check"></i>
-                            </div>
-                            <h4 class="fw-bold">Nexa Safety</h4>
-                        </div>
-                        <p>Comprehensive safety management hub with AI-powered unsafe practice detection 
-                        from job photos and videos.</p>
-                        <ul class="feature-bullets">
-                            <li>Good catch & near miss reporting</li>
-                            <li>Training compliance tracking</li>
-                            <li>AI safety detection</li>
-                            <li>Utility-contractor sync</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Grid -->
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="500">
-                    <div class="pillar-card h-100">
-                        <div class="pillar-header">
-                            <div class="pillar-icon-small">
+                        <div class="d-flex gap-3 mb-3">
+                            <div class="pillar-icon">
                                 <i class="bi bi-grid-3x3-gap-fill"></i>
                             </div>
-                            <h4 class="fw-bold">Nexa Grid</h4>
-                        </div>
-                        <p>Autonomous inspection network utilizing drones for real-time grid inspections, 
-                        data labeling, and automated EC tag generation.</p>
-                        <ul class="feature-bullets">
-                            <li>Drone-based inspections</li>
-                            <li>Real-time data labeling</li>
-                            <li>Automated reporting</li>
-                            <li>Autonomous operations roadmap</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Insights -->
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="600">
-                    <div class="pillar-card h-100">
-                        <div class="pillar-header">
-                            <div class="pillar-icon-small">
-                                <i class="bi bi-graph-up-arrow"></i>
+                            <div class="flex-grow-1">
+                                <h3 class="h5 fw-bold mb-2">NEXA Grid</h3>
+                                <p class="text-secondary mb-0">
+                                    Autonomous drone inspections with real-time tagging and auto-generated inspection reports mapped to assets.
+                                </p>
                             </div>
-                            <h4 class="fw-bold">Nexa Insights</h4>
                         </div>
-                        <p>Executive dashboard providing comprehensive analytics, benchmarking, 
-                        and predictive insights across utilities and contractors.</p>
-                        <ul class="feature-bullets">
-                            <li>Outage risk prediction</li>
-                            <li>Live contractor scorecards</li>
-                            <li>Profitability optimization</li>
-                            <li>Crew performance analytics</li>
-                        </ul>
+                        <div class="d-flex flex-wrap gap-2 mb-4">
+                            <span class="badge-tech">Live geotagging</span>
+                            <span class="badge-tech">Spec cross-ref</span>
+                            <span class="badge-tech">Evidence chain</span>
+                        </div>
+                        <div class="d-flex gap-3 align-items-center">
+                            <a class="btn btn-primary btn-sm" href="#product-demo">Explore Grid</a>
+                            <a class="link-secondary small" href="security.html#grid">See architecture</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -410,87 +293,313 @@
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
                 <h2 class="display-5 fw-bold">Product in Action</h2>
-                <p class="lead text-secondary">See how Nexa transforms your workflow in four simple steps.</p>
+                <p class="lead text-secondary">Experience NEXA's AI-powered workflow automation</p>
             </div>
 
-            <div class="demo-container" data-aos="fade-up" data-aos-delay="100">
-                <!-- Step Indicators: Visual tracker for the demo flow -->
+            <!-- Demo Selector Tabs -->
+            <div class="demo-selector mb-4" data-aos="fade-up">
+                <div class="btn-group d-flex flex-wrap justify-content-center gap-2" role="group">
+                    <button class="btn btn-outline-primary active" data-demo="job-package">
+                        <i class="bi bi-file-earmark-text me-2"></i>Job Package Auto-Fill
+                    </button>
+                    <button class="btn btn-outline-primary" data-demo="crew-scheduling">
+                        <i class="bi bi-people-fill me-2"></i>Smart Crew Scheduling
+                    </button>
+                    <button class="btn btn-outline-primary" data-demo="compliance">
+                        <i class="bi bi-shield-check me-2"></i>Compliance Check
+                    </button>
+                </div>
+            </div>
+
+            <!-- Demo 1: Job Package Auto-Fill -->
+            <div class="demo-container active" id="demo-job-package" data-aos="fade-up" data-aos-delay="100">
+                <!-- Step Indicators -->
                 <div class="demo-steps">
                     <div class="step-item active" data-step="1">
                         <div class="step-icon"><i class="bi bi-file-earmark-arrow-up-fill"></i></div>
-                        <span>Upload PDF</span>
+                        <span>Upload Package</span>
                     </div>
                     <div class="step-item" data-step="2">
-                        <div class="step-icon"><i class="bi bi-card-checklist"></i></div>
-                        <span>Parsed Data</span>
+                        <div class="step-icon"><i class="bi bi-cpu"></i></div>
+                        <span>AI Extraction</span>
                     </div>
                     <div class="step-item" data-step="3">
-                        <div class="step-icon"><i class="bi bi-camera-fill"></i></div>
-                        <span>Submit Photos</span>
+                        <div class="step-icon"><i class="bi bi-card-checklist"></i></div>
+                        <span>Auto-Fill Forms</span>
                     </div>
                     <div class="step-item" data-step="4">
-                        <div class="step-icon"><i class="bi bi-robot"></i></div>
-                        <span>AI Analysis</span>
+                        <div class="step-icon"><i class="bi bi-check-circle-fill"></i></div>
+                        <span>Ready to Deploy</span>
                     </div>
                 </div>
 
                 <!-- Demo Content Wrapper: Contains the content for each step -->
                 <div class="demo-content-wrapper">
-                    <!-- Step 1: Upload PDF -->
-                    <!-- Initial step where the user starts the simulation -->
-                    <div class="demo-content active" id="demo-step-1">
-                        <h4 class="mb-3">Step 1: Upload Job Package PDF</h4>
-                        <p class="text-secondary mb-4">Simulate uploading a utility job package. Our AI will parse the document to extract key details, saving hours of manual data entry.</p>
-                        <button id="start-demo-btn" class="btn btn-primary btn-lg">
-                            <i class="bi bi-play-circle-fill me-2"></i>Start Simulation
+                    <!-- Step 1: Upload Job Package -->
+                    <div class="demo-content active" id="jp-step-1">
+                        <h4 class="mb-3">Upload Job Package (PDF/Excel)</h4>
+                        <p class="text-secondary mb-4">Drop any utility job package - our AI extracts work orders, materials, permits, and safety requirements instantly.</p>
+                        <div class="upload-zone border-dashed p-4 text-center">
+                            <i class="bi bi-cloud-upload display-1 text-primary"></i>
+                            <p class="mt-3">Drag & drop job packages here</p>
+                            <small class="text-muted">Supports: PDF, Excel, Word, Images</small>
+                        </div>
+                        <button id="start-jp-demo" class="btn btn-primary btn-lg mt-3">
+                            <i class="bi bi-play-circle-fill me-2"></i>Simulate Upload
                         </button>
-                        <div id="pdf-upload-spinner" class="spinner-border text-primary mt-4" role="status" style="display: none;">
-                            <span class="visually-hidden">Loading...</span>
+                        <div id="jp-spinner" class="spinner-border text-primary mt-4" role="status" style="display: none;">
+                            <span class="visually-hidden">Processing...</span>
                         </div>
                     </div>
 
-                    <!-- Step 2: Parsed Data -->
-                    <!-- Shows the result of the AI parsing the uploaded document -->
-                    <div class="demo-content" id="demo-step-2">
-                        <h4 class="mb-3">Step 2: Foreman's View - Parsed Data</h4>
-                        <p class="text-secondary mb-4">The foreman instantly receives the parsed job data on their mobile device. No manual entry, no errors.</p>
-                        <div class="foreman-view card">
-                            <div class="card-header">
-                                <h5>Job Package: JP-2024-08-15A</h5>
+                    <!-- Step 2: AI Extraction -->
+                    <div class="demo-content" id="jp-step-2">
+                        <h4 class="mb-3">AI Extracting Data...</h4>
+                        <div class="extraction-progress">
+                            <div class="progress mb-3">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 100%"></div>
                             </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><strong>Location:</strong> 123 Powerline Rd, Anytown</li>
-                                <li class="list-group-item"><strong>Task:</strong> Pole Replacement</li>
-                                <li class="list-group-item"><strong>Required Materials:</strong> 45-foot Class 2 Pole, Crossarm, Insulators</li>
-                                <li class="list-group-item"><strong>Permits:</strong> Road Closure Permit #RC-5822</li>
-                            </ul>
+                            <div class="extracted-items">
+                                <div class="alert alert-success"><i class="bi bi-check-circle me-2"></i>Work Order: WO-2024-1847</div>
+                                <div class="alert alert-success"><i class="bi bi-check-circle me-2"></i>07D Tag Work - Priority 1</div>
+                                <div class="alert alert-success"><i class="bi bi-check-circle me-2"></i>Location: Substation 42B, Circuit 7</div>
+                                <div class="alert alert-success"><i class="bi bi-check-circle me-2"></i>Materials: 3x Crossarms, 12x Insulators, Ground Wire</div>
+                                <div class="alert alert-success"><i class="bi bi-check-circle me-2"></i>Permits: ROW Access #5822, Traffic Control Required</div>
+                            </div>
                         </div>
-                        <button id="next-step-2-btn" class="btn btn-primary btn-lg mt-4">Continue to Photo Submission</button>
+                        <button id="next-jp-2" class="btn btn-primary btn-lg mt-4">Continue to Auto-Fill</button>
                     </div>
 
-                    <!-- Step 3: Submit Photos -->
-                    <!-- Simulates the crew submitting as-built photos for verification -->
-                    <div class="demo-content" id="demo-step-3">
-                        <h4 class="mb-3">Step 3: Submit Job-Site Photos</h4>
-                        <p class="text-secondary mb-4">The crew completes the work and submits photos for as-built verification. This triggers the AI analysis for safety and compliance.</p>
-                        <button id="submit-photos-btn" class="btn btn-primary btn-lg">Submit Photos for Analysis</button>
-                        <div id="photo-upload-spinner" class="spinner-border text-primary mt-4" role="status" style="display: none;">
-                            <span class="visually-hidden">Loading...</span>
+                    <!-- Step 3: Auto-Fill Forms -->
+                    <div class="demo-content" id="jp-step-3">
+                        <h4 class="mb-3">Forms Auto-Populated</h4>
+                        <p class="text-secondary mb-4">All utility-specific forms are instantly filled with extracted data. Foreman reviews and approves.</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card mb-3">
+                                    <div class="card-header bg-success text-white">Safety Checklist ✓</div>
+                                    <div class="card-body small">
+                                        <p><strong>PPE Required:</strong> Hard hat, FR clothing, Class 2 gloves</p>
+                                        <p><strong>Hazards:</strong> Energized lines, Traffic, Heights</p>
+                                        <p><strong>Job Briefing:</strong> Auto-generated from WO-2024-1847</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card mb-3">
+                                    <div class="card-header bg-success text-white">Material Request ✓</div>
+                                    <div class="card-body small">
+                                        <p><strong>Stock:</strong> Auto-pulled from warehouse</p>
+                                        <p><strong>Delivery:</strong> Scheduled for 6:00 AM</p>
+                                        <p><strong>Truck:</strong> Bucket truck #42 assigned</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        <button id="next-jp-3" class="btn btn-primary btn-lg">Deploy to Crew</button>
                     </div>
 
-                    <!-- Step 4: AI Analysis -->
-                    <!-- Displays the AI-generated feedback based on the submitted photos -->
-                    <div class="demo-content" id="demo-step-4">
-                        <h4 class="mb-3">Step 4: AI-Powered Analysis & Feedback</h4>
-                        <p class="text-secondary mb-4">Nexa's AI agent analyzes the photos and provides immediate feedback, flagging potential issues before the crew leaves the site.</p>
-                        <div class="ai-feedback alert alert-warning">
-                            <div class="alert-heading"><i class="bi bi-exclamation-triangle-fill me-2"></i>AI Feedback: Potential Issue Detected</div>
-                            <p>The submitted photo shows the new pole is missing required grounding wire. Please correct this and resubmit photo for verification.</p>
-                            <hr>
-                            <p class="mb-0">This proactive feedback prevents costly return trips and ensures compliance.</p>
+                    <!-- Step 4: Ready to Deploy -->
+                    <div class="demo-content" id="jp-step-4">
+                        <h4 class="mb-3">Package Ready - Crew Deployed</h4>
+                        <div class="alert alert-success">
+                            <h5><i class="bi bi-check-circle-fill me-2"></i>Job Package Complete</h5>
+                            <p>All forms auto-filled, materials staged, crew assigned. What used to take 2 hours now takes 2 minutes.</p>
                         </div>
-                        <button id="restart-demo-btn" class="btn btn-outline-light btn-lg mt-4">Restart Demo</button>
+                        <div class="metrics-display">
+                            <div class="row text-center">
+                                <div class="col-4">
+                                    <h3 class="text-primary">98%</h3>
+                                    <small>Time Saved</small>
+                                </div>
+                                <div class="col-4">
+                                    <h3 class="text-primary">0</h3>
+                                    <small>Manual Errors</small>
+                                </div>
+                                <div class="col-4">
+                                    <h3 class="text-primary">100%</h3>
+                                    <small>Compliance</small>
+                                </div>
+                            </div>
+                        </div>
+                        <button id="restart-jp-demo" class="btn btn-outline-primary btn-lg mt-4">Restart Demo</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Demo 2: Smart Crew Scheduling -->
+            <div class="demo-container" id="demo-crew-scheduling" style="display: none;">
+                <h3 class="text-center mb-4">AI-Powered Crew Scheduling with Profitability Scoring</h3>
+                <p class="text-center text-secondary mb-4">See how NEXA matches the right foreman to the right job based on profitability history and skill matching</p>
+                
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card mb-4">
+                            <div class="card-header bg-primary text-white">
+                                <h5 class="mb-0">Available Jobs Today</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="job-item mb-3 p-3 border rounded">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div>
+                                            <h6 class="fw-bold">07D Tag Work - Circuit 42</h6>
+                                            <small class="text-muted">Priority 1 | Est. 8 hours | $12,500 revenue</small>
+                                        </div>
+                                        <span class="badge bg-danger">Urgent</span>
+                                    </div>
+                                </div>
+                                <div class="job-item mb-3 p-3 border rounded">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div>
+                                            <h6 class="fw-bold">New Business - Subdivision Connect</h6>
+                                            <small class="text-muted">Priority 2 | Est. 16 hours | $28,000 revenue</small>
+                                        </div>
+                                        <span class="badge bg-success">High Value</span>
+                                    </div>
+                                </div>
+                                <div class="job-item mb-3 p-3 border rounded">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div>
+                                            <h6 class="fw-bold">Maintenance - Pole Replacement</h6>
+                                            <small class="text-muted">Priority 3 | Est. 6 hours | $8,200 revenue</small>
+                                        </div>
+                                        <span class="badge bg-warning">Routine</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header bg-success text-white">
+                                <h5 class="mb-0">AI Crew Recommendations</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="crew-recommendation mb-3">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <img src="https://ui-avatars.com/api/?name=Mike+Johnson&background=2f7afe&color=fff" class="rounded-circle me-3" width="50">
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-0">Mike Johnson - Crew 7</h6>
+                                            <small class="text-muted">Best for: 07D Tag Work</small>
+                                        </div>
+                                        <div class="text-end">
+                                            <div class="text-success fw-bold">98% Match</div>
+                                            <small>Profit Score: 94/100</small>
+                                        </div>
+                                    </div>
+                                    <div class="progress mb-2" style="height: 10px;">
+                                        <div class="progress-bar bg-success" style="width: 94%"></div>
+                                    </div>
+                                    <small class="text-muted">• 15 years 07D experience • 42% profit margin avg • Zero safety incidents</small>
+                                </div>
+                                
+                                <div class="crew-recommendation mb-3">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <img src="https://ui-avatars.com/api/?name=Sarah+Chen&background=28a745&color=fff" class="rounded-circle me-3" width="50">
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-0">Sarah Chen - Crew 3</h6>
+                                            <small class="text-muted">Best for: New Business</small>
+                                        </div>
+                                        <div class="text-end">
+                                            <div class="text-success fw-bold">95% Match</div>
+                                            <small>Profit Score: 89/100</small>
+                                        </div>
+                                    </div>
+                                    <div class="progress mb-2" style="height: 10px;">
+                                        <div class="progress-bar bg-success" style="width: 89%"></div>
+                                    </div>
+                                    <small class="text-muted">• New construction specialist • 38% profit margin • Customer satisfaction 4.9/5</small>
+                                </div>
+                                
+                                <div class="crew-recommendation">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <img src="https://ui-avatars.com/api/?name=Tom+Rodriguez&background=ffc107&color=fff" class="rounded-circle me-3" width="50">
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-0">Tom Rodriguez - Crew 12</h6>
+                                            <small class="text-muted">Best for: Maintenance</small>
+                                        </div>
+                                        <div class="text-end">
+                                            <div class="text-warning fw-bold">82% Match</div>
+                                            <small>Profit Score: 76/100</small>
+                                        </div>
+                                    </div>
+                                    <div class="progress mb-2" style="height: 10px;">
+                                        <div class="progress-bar bg-warning" style="width: 76%"></div>
+                                    </div>
+                                    <small class="text-muted">• Efficient maintenance crew • 31% profit margin • Strong safety record</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-4">
+                    <button class="btn btn-success btn-lg" id="auto-schedule-btn">
+                        <i class="bi bi-magic me-2"></i>Auto-Schedule All Crews
+                    </button>
+                    <div id="schedule-result" class="alert alert-success mt-3" style="display: none;">
+                        <h5><i class="bi bi-check-circle-fill me-2"></i>Scheduling Complete!</h5>
+                        <p>3 crews assigned optimally. Expected profit margin: 38.2% (↑ 6.4% from manual scheduling)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Demo 3: Compliance Check -->
+            <div class="demo-container" id="demo-compliance" style="display: none;">
+                <h3 class="text-center mb-4">Real-Time Safety & Compliance Verification</h3>
+                <p class="text-center text-secondary mb-4">AI analyzes job site photos instantly to ensure safety and compliance standards</p>
+                
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0">Job Site Photo Analysis</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="photo-upload-area text-center p-4 border-dashed">
+                                    <i class="bi bi-camera display-1 text-muted"></i>
+                                    <p class="mt-3">Upload job site photos for instant compliance check</p>
+                                    <button class="btn btn-primary" id="simulate-photo-upload">
+                                        <i class="bi bi-upload me-2"></i>Simulate Photo Upload
+                                    </button>
+                                </div>
+                                <div id="photo-preview" class="mt-3" style="display: none;">
+                                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23ddd' width='400' height='300'/%3E%3Ctext fill='%23999' font-family='sans-serif' font-size='20' x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle'%3EJob Site Photo%3C/text%3E%3C/svg%3E" class="img-fluid rounded">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header bg-info text-white">
+                                <h5 class="mb-0">AI Compliance Analysis</h5>
+                            </div>
+                            <div class="card-body" id="compliance-results" style="display: none;">
+                                <div class="alert alert-success mb-3">
+                                    <i class="bi bi-check-circle me-2"></i><strong>PPE Compliance:</strong> All crew members wearing required safety gear
+                                </div>
+                                <div class="alert alert-warning mb-3">
+                                    <i class="bi bi-exclamation-triangle me-2"></i><strong>Grounding Issue:</strong> Missing ground wire on pole #3
+                                </div>
+                                <div class="alert alert-success mb-3">
+                                    <i class="bi bi-check-circle me-2"></i><strong>Traffic Control:</strong> Proper cones and signage in place
+                                </div>
+                                <div class="alert alert-danger mb-3">
+                                    <i class="bi bi-x-circle me-2"></i><strong>Safety Violation:</strong> Worker in bucket without fall protection harness
+                                </div>
+                                
+                                <div class="compliance-score text-center mt-4">
+                                    <h4>Compliance Score</h4>
+                                    <div class="display-3 text-warning">75%</div>
+                                    <p class="text-muted">2 issues require immediate attention</p>
+                                    <button class="btn btn-warning">
+                                        <i class="bi bi-bell me-2"></i>Alert Foreman
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

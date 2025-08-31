@@ -471,11 +471,14 @@ scrollTopBtn.addEventListener('mouseleave', () => {
 
 // Console welcome message
 // --- Console Welcome Message ---
-// A styled message for developers inspecting the console.
-console.log('%c Welcome to Nexa, Inc.! ', 'background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; font-size: 20px; font-weight: bold; padding: 10px;');
-console.log('🚀 Transforming Utility Contractor Operations with AI');
-console.log('📧 Contact us: founder@nexa-us.io');
-console.log('🌐 Visit: https://nexa-us.io');
+// A styled message for developers inspecting the console (only shown once per session)
+if (!sessionStorage.getItem('nexaWelcomeShown')) {
+    console.log('%c Welcome to Nexa, Inc.! ', 'background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; font-size: 20px; font-weight: bold; padding: 10px;');
+    console.log('🚀 Transforming Utility Contractor Operations with AI');
+    console.log('📧 Contact us: founder@nexa-us.io');
+    console.log('🌐 Visit: https://nexa-us.io');
+    sessionStorage.setItem('nexaWelcomeShown', 'true');
+}
 
 // --- Product in Action Demo Logic ---
 // Manages the state and flow of the interactive product demonstration section.
@@ -483,97 +486,161 @@ document.addEventListener('DOMContentLoaded', () => {
     const demoSection = document.getElementById('product-demo');
     if (!demoSection) return;
 
-    const startDemoBtn = document.getElementById('start-demo-btn');
-    const nextStep2Btn = document.getElementById('next-step-2-btn');
-    const submitPhotosBtn = document.getElementById('submit-photos-btn');
-    const restartDemoBtn = document.getElementById('restart-demo-btn');
-
-    const stepItems = document.querySelectorAll('.step-item');
-    const demoContents = document.querySelectorAll('.demo-content');
-
-    const pdfSpinner = document.getElementById('pdf-upload-spinner');
-    const photoSpinner = document.getElementById('photo-upload-spinner');
-
-        /**
-     * Navigates the demo to a specific step.
-     * @param {number} step - The step number to display.
-     */
-    const goToStep = (step) => {
-        stepItems.forEach(item => {
-            item.classList.remove('active');
-            if (parseInt(item.dataset.step) <= step) {
-                item.classList.add('active');
-            }
+    // Demo selector buttons
+    const demoSelectors = document.querySelectorAll('.demo-selector button');
+    const demoContainers = document.querySelectorAll('.demo-container');
+    
+    // Handle demo switching
+    demoSelectors.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetDemo = btn.getAttribute('data-demo');
+            
+            // Update button states
+            demoSelectors.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            // Show/hide demo containers
+            demoContainers.forEach(container => {
+                if (container.id === `demo-${targetDemo}`) {
+                    container.style.display = 'block';
+                } else {
+                    container.style.display = 'none';
+                }
+            });
         });
+    });
 
-        demoContents.forEach(content => {
-            content.classList.remove('active');
-        });
-        document.getElementById(`demo-step-${step}`).classList.add('active');
-    };
+    // Job Package Demo Elements
+    const startJpBtn = document.getElementById('start-jp-demo');
+    const nextJp2Btn = document.getElementById('next-jp-2');
+    const nextJp3Btn = document.getElementById('next-jp-3');
+    const restartJpBtn = document.getElementById('restart-jp-demo');
+    const jpSpinner = document.getElementById('jp-spinner');
+    const jpStepItems = document.querySelectorAll('#demo-job-package .step-item');
+    const jpDemoContents = document.querySelectorAll('#demo-job-package .demo-content');
 
-        /**
-     * Resets the demo to its initial state (Step 1).
-     */
-    const resetDemo = () => {
-        startDemoBtn.style.display = 'inline-block';
-        submitPhotosBtn.style.display = 'inline-block';
-        pdfSpinner.style.display = 'none';
-        photoSpinner.style.display = 'none';
+    // Job Package Demo Logic
+    const goToJpStep = (step) => {
+        console.log(`[Job Package Demo] Transitioning to step ${step}`);
         
-        stepItems.forEach((item, index) => {
-            if(index === 0) {
+        // Update step indicators
+        jpStepItems.forEach((item, index) => {
+            if(index < step) {
                 item.classList.add('active');
             } else {
                 item.classList.remove('active');
             }
         });
 
-        demoContents.forEach((content, index) => {
-            if(index === 0) {
+        // Update content visibility
+        jpDemoContents.forEach((content, index) => {
+            if(index === step - 1) {
                 content.classList.add('active');
             } else {
                 content.classList.remove('active');
             }
         });
-
-        // Go back to the first step's content
-        goToStep(1);
+        
+        // Manage button visibility based on step
+        if(startJpBtn) startJpBtn.style.display = step === 1 ? 'inline-block' : 'none';
+        if(nextJp2Btn) nextJp2Btn.style.display = step === 2 ? 'inline-block' : 'none';
+        if(nextJp3Btn) nextJp3Btn.style.display = step === 3 ? 'inline-block' : 'none';
+        if(restartJpBtn) restartJpBtn.style.display = step === 4 ? 'inline-block' : 'none';
+        if(jpSpinner) jpSpinner.style.display = 'none';
     };
 
-        // --- Event Listeners for Demo Buttons ---
+    // Job Package Demo Event Listeners
+    if(startJpBtn) {
+        startJpBtn.addEventListener('click', () => {
+            console.log('[Job Package Demo] Start button clicked');
+            startJpBtn.style.display = 'none';
+            if(jpSpinner) jpSpinner.style.display = 'block';
+            setTimeout(() => {
+                if(jpSpinner) jpSpinner.style.display = 'none';
+                goToJpStep(2);
+            }, 1500);
+        });
+    }
 
-    // Handles the 'Start Demo' button click
-    startDemoBtn.addEventListener('click', () => {
-        startDemoBtn.style.display = 'none';
-        pdfSpinner.style.display = 'block';
+    if(nextJp2Btn) {
+        nextJp2Btn.addEventListener('click', () => {
+            console.log('[Job Package Demo] Next Step 2 clicked');
+            goToJpStep(3);
+        });
+    }
 
-        setTimeout(() => {
-            pdfSpinner.style.display = 'none';
-            goToStep(2);
-        }, 1500);
-    });
+    if(nextJp3Btn) {
+        nextJp3Btn.addEventListener('click', () => {
+            console.log('[Job Package Demo] Next Step 3 clicked');
+            goToJpStep(4);
+        });
+    }
 
-        // Handles the 'Next' button click on the Foreman's View
-    nextStep2Btn.addEventListener('click', () => {
-        goToStep(3);
-    });
+    if(restartJpBtn) {
+        restartJpBtn.addEventListener('click', () => {
+            console.log('[Job Package Demo] Restart clicked');
+            goToJpStep(1);
+        });
+    }
+    
+    // Initialize Job Package demo to step 1
+    if(jpStepItems.length > 0) {
+        goToJpStep(1);
+    }
 
-        // Handles the 'Submit Photos' button click
-    submitPhotosBtn.addEventListener('click', () => {
-        submitPhotosBtn.style.display = 'none';
-        photoSpinner.style.display = 'block';
+    // Crew Scheduling Demo
+    const autoScheduleBtn = document.getElementById('auto-schedule-btn');
+    const scheduleResult = document.getElementById('schedule-result');
+    
+    if(autoScheduleBtn) {
+        autoScheduleBtn.addEventListener('click', () => {
+            autoScheduleBtn.disabled = true;
+            autoScheduleBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Optimizing...';
+            
+            setTimeout(() => {
+                scheduleResult.style.display = 'block';
+                autoScheduleBtn.innerHTML = '<i class="bi bi-check-circle me-2"></i>Scheduled!';
+                autoScheduleBtn.classList.remove('btn-success');
+                autoScheduleBtn.classList.add('btn-outline-success');
+                
+                // Highlight crew recommendations
+                document.querySelectorAll('.crew-recommendation').forEach(crew => {
+                    crew.style.backgroundColor = '#f0fff4';
+                    crew.style.transition = 'background-color 0.5s';
+                });
+            }, 2000);
+        });
+    }
 
-        setTimeout(() => {
-            photoSpinner.style.display = 'none';
-            goToStep(4);
-        }, 2000);
-    });
-
-        // Handles the 'Restart Demo' button click
-    restartDemoBtn.addEventListener('click', resetDemo);
-
-    // Initialize
-        // Initialize the demo to its default state on page load
-    resetDemo();
+    // Compliance Demo
+    const simulatePhotoBtn = document.getElementById('simulate-photo-upload');
+    const photoPreview = document.getElementById('photo-preview');
+    const complianceResults = document.getElementById('compliance-results');
+    
+    if(simulatePhotoBtn) {
+        simulatePhotoBtn.addEventListener('click', () => {
+            simulatePhotoBtn.disabled = true;
+            simulatePhotoBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Uploading...';
+            
+            setTimeout(() => {
+                photoPreview.style.display = 'block';
+                simulatePhotoBtn.innerHTML = '<i class="bi bi-check me-2"></i>Photo Uploaded';
+                
+                setTimeout(() => {
+                    complianceResults.style.display = 'block';
+                    // Animate compliance alerts appearing
+                    const alerts = complianceResults.querySelectorAll('.alert');
+                    alerts.forEach((alert, index) => {
+                        alert.style.opacity = '0';
+                        alert.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            alert.style.transition = 'all 0.3s';
+                            alert.style.opacity = '1';
+                            alert.style.transform = 'translateY(0)';
+                        }, index * 200);
+                    });
+                }, 1000);
+            }, 1500);
+        });
+    }
 });
