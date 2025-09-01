@@ -280,10 +280,199 @@ document.addEventListener('DOMContentLoaded', () => {
     // Removed ecosystem visualization - now using static card layout
 });
 
-// Service selection dropdown enhancement
-// --- UI Enhancements ---
+// Pillar Modal System
+document.addEventListener('DOMContentLoaded', () => {
+    const pillarData = {
+        core: {
+            icon: 'bi-cpu-fill',
+            title: 'NEXA Core',
+            subtitle: 'Day-to-Day Operations Automation',
+            description: 'The foundation of contractor-first utility operations.',
+            painPoints: [
+                { icon: 'bi-clock-history', title: 'Manual Spec Verification', desc: 'Foremen spend 2+ hours daily. We automate instantly.' },
+                { icon: 'bi-exclamation-triangle', title: 'Compliance Violations', desc: 'One missed spec and your crew is going back on your dime. Real-time compliance engine catches violations.' },
+                { icon: 'bi-arrow-repeat', title: 'Go-Backs & Rework', desc: '15% of jobs require return trips. Pre-flight checks ensure success.' }
+            ],
+            security: ['SOC 2 Compliant', 'End-to-End Encryption', 'NERC CIP Ready'],
+            stacking: 'Pairs with Storm for emergency response and Field for crew communication.'
+        },
+        storm: {
+            icon: 'bi-cloud-lightning-fill',
+            title: 'NEXA Storm',
+            subtitle: 'Rapid Outage Response Platform',
+            description: 'Deploy crews in minutes, not hours. QR rostering and mass SMS dispatch.',
+            painPoints: [
+                { icon: 'bi-speedometer2', title: 'Slow Mobilization', desc: 'Manual assembly takes 4+ hours. QR cuts to 30 minutes.' },
+                { icon: 'bi-geo-alt', title: 'Resource Tracking', desc: 'Know where your crew is at, upload storm tags efficiently, assign to CA crew in that area with one click.' },
+                { icon: 'bi-clipboard-data', title: 'Paper Forms', desc: 'Digital forms with offline sync and auto-submission.' }
+            ],
+            security: ['Edge-ready Architecture', 'Offline-tolerant', 'PII Guardrails'],
+            stacking: 'Combine with Grid for damage assessment and Supply for materials.'
+        },
+        grid: {
+            icon: 'bi-grid-3x3-gap-fill',
+            title: 'NEXA Grid',
+            subtitle: 'Autonomous Inspection & Mapping',
+            description: 'AI-powered drone inspections with real-time tagging and auto-generated reports.',
+            painPoints: [
+                { icon: 'bi-eye-slash', title: 'Blind Spots', desc: 'Manual inspections miss 30% of defects. AI catches everything.' },
+                { icon: 'bi-calendar-x', title: 'Inspection Backlogs', desc: '6-month cycles. Autonomous drones complete in days.' },
+                { icon: 'bi-file-earmark-x', title: 'Report Generation', desc: '2 weeks for reports. Auto-generated in real-time.' }
+            ],
+            security: ['Live Geotagging', 'Evidence Chain Integrity', 'Secure Asset Mapping'],
+            stacking: 'Integrates with Core for automated work order generation.'
+        },
+        supply: {
+            icon: 'bi-box-seam-fill',
+            title: 'NEXA Supply Chain',
+            subtitle: 'Real-time Material Management',
+            description: 'End-to-end inventory tracking ensuring materials are always available.',
+            painPoints: [
+                { icon: 'bi-truck', title: 'Material Shortages', desc: 'Crews arrive without materials 20% of time. Real-time prevents this.' },
+                { icon: 'bi-graph-down', title: 'Stock-outs', desc: 'Emergency purchases cost 3x. Predictive ordering maintains levels.' },
+                { icon: 'bi-receipt', title: 'Manual Tracking', desc: 'Excel = $2M annual loss. Automated barcode scanning.' }
+            ],
+            security: ['Material Chain of Custody', 'Vendor Integration Security', 'Audit Logs'],
+            stacking: 'Works with Core for material validation and Storm for emergency supply.'
+        },
+        field: {
+            icon: 'bi-chat-dots-fill',
+            title: 'NEXA Field',
+            subtitle: 'AI Assistant for Foremen',
+            description: 'LLM trained on your utility data lake. Instant spec lookups and guidance.',
+            painPoints: [
+                { icon: 'bi-question-circle', title: 'Spec Confusion', desc: 'Foremen call office 10+ times daily. AI answers instantly.' },
+                { icon: 'bi-clock', title: 'Historical Context', desc: 'Foreman don\'t have time to look up archived jobs for the office, let NEXA Field take care of that.' },
+                { icon: 'bi-shield-x', title: 'Safety Violations', desc: 'Missed steps = injuries. Real-time safety coaching.' }
+            ],
+            security: ['On-device AI Processing', 'Encrypted Communications', 'Role-based Access'],
+            stacking: 'Enhances Core with field intelligence and Design with construction feedback.'
+        },
+        design: {
+            icon: 'bi-rulers',
+            title: 'NEXA Design',
+            subtitle: 'AI-Powered Engineering Automation',
+            description: 'Submit undesigned jobs and receive fully engineered designs in seconds.',
+            painPoints: [
+                { icon: 'bi-hourglass-split', title: 'Design Bottlenecks', desc: '2-week cycles. AI generates in 3.2 seconds.' },
+                { icon: 'bi-calculator', title: 'Manual Calculations', desc: 'Error-prone hand calculations. Automated with accuracy.' },
+                { icon: 'bi-file-earmark-pdf', title: 'Permit Delays', desc: 'Missing docs delay permits. Auto-generated packages.' }
+            ],
+            security: ['Design Validation Engine', 'Permit Compliance Checks', 'Version Control'],
+            stacking: 'Feeds into Core for execution and Field for construction guidance.'
+        },
+        insights: {
+            icon: 'bi-graph-up-arrow',
+            title: 'NEXA Insights',
+            subtitle: 'Utility-wide Transparency Dashboard',
+            description: 'Complete visibility across all contractors, jobs, and assets.',
+            painPoints: [
+                { icon: 'bi-eye-slash', title: 'Contractor Blindness', desc: 'No visibility into performance. Real-time dashboards.' },
+                { icon: 'bi-exclamation-octagon', title: 'Surprise Audits', desc: 'Waiting for asbuilt submission? See the status of that asbuilt in seconds without having to send emails and make countless phone calls.' },
+                { icon: 'bi-graph-down-arrow', title: 'Reactive Management', desc: 'Problems found after completion. Predictive alerts.' }
+            ],
+            security: ['Row-level Security', 'Multi-tenant Isolation', 'Audit-ready Logs'],
+            stacking: 'Central hub for all pillars. Best paired with Core and Field for complete visibility.'
+        },
+        vault: {
+            icon: 'bi-safe-fill',
+            title: 'NEXA Vault',
+            subtitle: 'Critical Grid Data Storage',
+            description: 'Military-grade secure storage for critical utility infrastructure data.',
+            painPoints: [
+                { icon: 'bi-database-x', title: 'Data Breaches', desc: 'Grid data exposure = national security risk. Zero-trust architecture.' },
+                { icon: 'bi-file-lock', title: 'Compliance Storage', desc: '7-year retention requirements. Automated compliance archival.' },
+                { icon: 'bi-shield-slash', title: 'Ransomware Risk', desc: 'Utilities targeted weekly. Immutable backups with instant recovery.' }
+            ],
+            security: ['Zero-trust Architecture', 'Immutable Backups', 'NERC CIP Compliant', 'Air-gapped Storage'],
+            stacking: 'Foundation for all pillars. Essential for Insights analytics and Core operations.'
+        }
+    };
 
-// Adds a visual feedback glow to the service selection dropdown
+    // Handle pillar item clicks
+    const integrationItems = document.querySelectorAll('.integration-item[data-pillar]');
+    integrationItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const pillar = this.dataset.pillar;
+            const data = pillarData[pillar];
+            if (data) {
+                showPillarModal(data);
+            }
+        });
+    });
+
+    function showPillarModal(data) {
+        const modal = document.getElementById('pillarModal');
+        if (!modal) return;
+
+        // Update modal content
+        document.getElementById('modalIcon').className = data.icon;
+        document.getElementById('modalTitle').textContent = data.title;
+        
+        // Build modal content HTML
+        let contentHTML = `
+            <h5 class="text-primary mb-3">${data.subtitle}</h5>
+            <p class="lead text-white-50 mb-4">${data.description}</p>
+            
+            <div class="row">
+                <div class="col-lg-6">
+                    <h6 class="text-warning mb-3"><i class="bi bi-exclamation-diamond me-2"></i>Pain Points We Solve</h6>
+                    <div class="pain-points">`;
+        
+        data.painPoints.forEach(point => {
+            contentHTML += `
+                <div class="d-flex mb-3">
+                    <i class="${point.icon} text-danger me-3 mt-1"></i>
+                    <div>
+                        <strong>${point.title}</strong><br>
+                        <small class="text-white-50">${point.desc}</small>
+                    </div>
+                </div>`;
+        });
+        
+        contentHTML += `
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h6 class="text-success mb-3"><i class="bi bi-shield-check me-2"></i>Security Features</h6>
+                    <div class="security-features mb-4">`;
+        
+        data.security.forEach(feature => {
+            contentHTML += `
+                <span class="badge bg-success bg-opacity-25 text-success me-2 mb-2">
+                    <i class="bi bi-check-circle me-1"></i>${feature}
+                </span>`;
+        });
+        
+        contentHTML += `
+                    </div>
+                    <h6 class="text-info mb-3"><i class="bi bi-layers me-2"></i>Strategic Stacking</h6>
+                    <p class="text-white-50">${data.stacking}</p>
+                </div>
+            </div>`;
+        
+        document.getElementById('modalContent').innerHTML = contentHTML;
+        
+        // Handle demo button visibility
+        const demoBtn = document.getElementById('modalDemoBtn');
+        if (data.title === 'NEXA Insights') {
+            demoBtn.style.display = 'inline-block';
+            demoBtn.onclick = () => {
+                bootstrap.Modal.getInstance(modal).hide();
+                document.getElementById('insights-dashboard').style.display = 'block';
+                window.scrollTo(0, 0);
+            };
+        } else {
+            demoBtn.style.display = 'none';
+        }
+        
+        // Show modal
+        const bsModal = new bootstrap.Modal(modal);
+        bsModal.show();
+    }
+});
+
+// Service selection dropdown enhancement
 const serviceSelect = document.getElementById('service');
 if (serviceSelect) {
     serviceSelect.addEventListener('change', function() {

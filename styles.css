@@ -882,6 +882,34 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ----------------- 9. Contact Section ----------------- */
 /* Styles for contact information and the contact form. */
+/* Pillar Modal Styles */
+.modal-content {
+    border: 1px solid rgba(67, 97, 238, 0.3);
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%) !important;
+}
+
+.modal-header {
+    border-bottom: 1px solid rgba(67, 97, 238, 0.3) !important;
+}
+
+.modal-footer {
+    border-top: 1px solid rgba(67, 97, 238, 0.3) !important;
+}
+
+.modal-icon {
+    font-size: 2rem;
+    color: #4361ee;
+}
+
+.pain-points .bi {
+    font-size: 1.2rem;
+}
+
+.security-features .badge {
+    padding: 0.5rem 0.75rem;
+    font-weight: 500;
+}
+
 .contact-item {
     display: flex;
     align-items: center;

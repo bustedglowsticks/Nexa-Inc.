@@ -303,33 +303,37 @@
             <!-- Platform Integration Visual -->
             <div class="platform-integration mt-5" data-aos="fade-up" data-aos-delay="500">
                 <div class="integration-grid">
-                    <div class="integration-item">
+                    <div class="integration-item" data-pillar="core" style="cursor: pointer;">
                         <i class="bi bi-cpu-fill"></i>
                         <span>Core</span>
                     </div>
-                    <div class="integration-item">
+                    <div class="integration-item" data-pillar="storm" style="cursor: pointer;">
                         <i class="bi bi-cloud-lightning-fill"></i>
                         <span>Storm</span>
                     </div>
-                    <div class="integration-item">
+                    <div class="integration-item" data-pillar="grid" style="cursor: pointer;">
                         <i class="bi bi-grid-3x3-gap-fill"></i>
                         <span>Grid</span>
                     </div>
-                    <div class="integration-item">
+                    <div class="integration-item" data-pillar="supply" style="cursor: pointer;">
                         <i class="bi bi-box-seam-fill"></i>
                         <span>Supply</span>
                     </div>
-                    <div class="integration-item">
+                    <div class="integration-item" data-pillar="field" style="cursor: pointer;">
                         <i class="bi bi-chat-dots-fill"></i>
                         <span>Field</span>
                     </div>
-                    <div class="integration-item">
+                    <div class="integration-item" data-pillar="design" style="cursor: pointer;">
                         <i class="bi bi-rulers"></i>
                         <span>Design</span>
                     </div>
-                    <div class="integration-item">
+                    <div class="integration-item" data-pillar="insights" style="cursor: pointer;">
                         <i class="bi bi-graph-up-arrow"></i>
                         <span>Insights</span>
+                    </div>
+                    <div class="integration-item" data-pillar="vault" style="cursor: pointer;">
+                        <i class="bi bi-safe-fill"></i>
+                        <span>Vault</span>
                     </div>
                 </div>
             </div>
@@ -827,19 +831,206 @@
     <!-- ============================================= -->
     <!-- ============== CONTACT SECTION ============== -->
     <!-- ============================================= -->
-    <section id="contact" class="py-5 bg-light">
+    <!-- Insights Dashboard Demo -->
+    <section id="insights-dashboard" class="py-5 bg-dark" style="display: none;">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-4 fw-bold text-white">NEXA Insights Dashboard</h2>
+                <p class="lead text-white-50">Real-time Utility Operations Transparency</p>
+            </div>
+            
+            <!-- Dashboard Stats -->
+            <div class="row mb-4">
+                <div class="col-md-3 mb-3">
+                    <div class="card bg-gradient text-white h-100" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <div class="card-body">
+                            <h6 class="text-white-50">Active Jobs</h6>
+                            <h2 class="mb-0">247</h2>
+                            <small class="text-white-50">↑ 12% from last week</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="card bg-gradient text-white h-100" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <div class="card-body">
+                            <h6 class="text-white-50">Contractor Teams</h6>
+                            <h2 class="mb-0">38</h2>
+                            <small class="text-white-50">6 crews on standby</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="card bg-gradient text-white h-100" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <div class="card-body">
+                            <h6 class="text-white-50">Compliance Rate</h6>
+                            <h2 class="mb-0">99.7%</h2>
+                            <small class="text-white-50">Zero violations this month</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="card bg-gradient text-white h-100" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                        <div class="card-body">
+                            <h6 class="text-white-50">Avg Response Time</h6>
+                            <h2 class="mb-0">18min</h2>
+                            <small class="text-white-50">↓ 35% improvement</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Live Activity Feed -->
+            <div class="row">
+                <div class="col-lg-8 mb-4">
+                    <div class="card bg-dark border-primary">
+                        <div class="card-header bg-primary bg-opacity-10 border-primary">
+                            <h5 class="mb-0 text-white"><i class="bi bi-activity me-2"></i>Live Contractor Activity</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="activity-feed">
+                                <div class="activity-item d-flex align-items-start mb-3 pb-3 border-bottom border-secondary">
+                                    <div class="activity-icon bg-success bg-opacity-25 rounded-circle p-2 me-3">
+                                        <i class="bi bi-check-circle text-success"></i>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <div class="d-flex justify-content-between">
+                                            <strong class="text-white">Team Alpha - Underground Installation</strong>
+                                            <small class="text-white-50">2 min ago</small>
+                                        </div>
+                                        <p class="mb-0 text-white-50">Completed 500ft conduit run at Grid Section 7B</p>
+                                    </div>
+                                </div>
+                                <div class="activity-item d-flex align-items-start mb-3 pb-3 border-bottom border-secondary">
+                                    <div class="activity-icon bg-warning bg-opacity-25 rounded-circle p-2 me-3">
+                                        <i class="bi bi-exclamation-triangle text-warning"></i>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <div class="d-flex justify-content-between">
+                                            <strong class="text-white">Team Bravo - Storm Response</strong>
+                                            <small class="text-white-50">5 min ago</small>
+                                        </div>
+                                        <p class="mb-0 text-white-50">Material shortage reported - requesting 20 transformers</p>
+                                    </div>
+                                </div>
+                                <div class="activity-item d-flex align-items-start mb-3 pb-3 border-bottom border-secondary">
+                                    <div class="activity-icon bg-info bg-opacity-25 rounded-circle p-2 me-3">
+                                        <i class="bi bi-geo-alt text-info"></i>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <div class="d-flex justify-content-between">
+                                            <strong class="text-white">Team Charlie - Inspection</strong>
+                                            <small class="text-white-50">12 min ago</small>
+                                        </div>
+                                        <p class="mb-0 text-white-50">Drone inspection started at Substation Delta</p>
+                                    </div>
+                                </div>
+                                <div class="activity-item d-flex align-items-start mb-3">
+                                    <div class="activity-icon bg-primary bg-opacity-25 rounded-circle p-2 me-3">
+                                        <i class="bi bi-clipboard-check text-primary"></i>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <div class="d-flex justify-content-between">
+                                            <strong class="text-white">Team Delta - Maintenance</strong>
+                                            <small class="text-white-50">18 min ago</small>
+                                        </div>
+                                        <p class="mb-0 text-white-50">Preventive maintenance completed on 12 poles</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Compliance & Safety Metrics -->
+                <div class="col-lg-4 mb-4">
+                    <div class="card bg-dark border-success mb-3">
+                        <div class="card-header bg-success bg-opacity-10 border-success">
+                            <h5 class="mb-0 text-white"><i class="bi bi-shield-check me-2"></i>Safety Metrics</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="text-white-50">Days Without Incident</span>
+                                <strong class="text-success">127</strong>
+                            </div>
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="text-white-50">Safety Training Compliance</span>
+                                <strong class="text-success">100%</strong>
+                            </div>
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="text-white-50">PPE Compliance</span>
+                                <strong class="text-success">100%</strong>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span class="text-white-50">Near Miss Reports</span>
+                                <strong class="text-warning">3</strong>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card bg-dark border-info">
+                        <div class="card-header bg-info bg-opacity-10 border-info">
+                            <h5 class="mb-0 text-white"><i class="bi bi-graph-up me-2"></i>Performance</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="text-white-50">On-Time Completion</span>
+                                <strong class="text-info">94%</strong>
+                            </div>
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="text-white-50">First-Time Success</span>
+                                <strong class="text-info">89%</strong>
+                            </div>
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="text-white-50">Customer Satisfaction</span>
+                                <strong class="text-info">4.8/5</strong>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span class="text-white-50">Cost Efficiency</span>
+                                <strong class="text-success">+12%</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <button class="btn btn-primary btn-lg" onclick="document.getElementById('insights-dashboard').style.display='none';">
+                    <i class="bi bi-arrow-left me-2"></i>Back to Main Site
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pillar Details Modal -->
+    <div class="modal fade" id="pillarModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content bg-dark text-white">
+                <div class="modal-header border-primary">
+                    <div class="d-flex align-items-center">
+                        <div class="modal-icon me-3">
+                            <i id="modalIcon" class="bi bi-cpu-fill"></i>
+                        </div>
+                        <h3 class="modal-title" id="modalTitle">NEXA Core</h3>
+                    </div>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="modalContent">
+                        <!-- Dynamic content will be loaded here -->
+                    </div>
+                </div>
+                <div class="modal-footer border-primary">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="modalDemoBtn">View Demo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5 mt-5">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4">
-                    <h3 class="fw-bold mb-4">Get in Touch</h3>
-                    <div class="contact-info">
-                        <div class="contact-item" data-aos="fade-up" data-aos-delay="100">
-                            <i class="bi bi-geo-alt-fill"></i>
-                            <span>Minnesota</span>
-                        </div>
-                        <div class="contact-item" data-aos="fade-up" data-aos-delay="100">
-                            <i class="bi bi-envelope-fill"></i>
-                            <a href="mailto:founder@nexa-us.io">founder@nexa-us.io</a>
                         </div>
                         <div class="contact-item" data-aos="fade-up" data-aos-delay="200">
                             <i class="bi bi-globe"></i>
