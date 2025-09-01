@@ -462,13 +462,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('insights-dashboard').style.display = 'block';
                 window.scrollTo(0, 0);
             };
+        } else if (data.title === 'NEXA Field') {
+            demoBtn.style.display = 'inline-block';
+            demoBtn.textContent = 'Watch Demo';
+            demoBtn.onclick = () => {
+                showFieldVideo();
+            };
         } else {
             demoBtn.style.display = 'none';
+            demoBtn.textContent = 'View Demo';
         }
         
         // Show modal
         const bsModal = new bootstrap.Modal(modal);
         bsModal.show();
+    }
+
+    function showFieldVideo() {
+        const modal = document.getElementById('pillarModal');
+        bootstrap.Modal.getInstance(modal).hide();
+        
+        const videoModal = document.getElementById('fieldVideoModal');
+        const bsVideoModal = new bootstrap.Modal(videoModal);
+        bsVideoModal.show();
     }
 });
 
