@@ -791,9 +791,10 @@ h1, h2, h3, h4, h5, h6 {
 /* ----------------- 8. CTA Section ----------------- */
 /* Styling for the Call-to-Action section. */
 .cta-section {
-    background: transparent;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     color: white;
     position: relative;
+    margin-top: 80px;
     overflow: hidden;
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
