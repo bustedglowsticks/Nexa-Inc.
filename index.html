@@ -226,6 +226,32 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- DESIGN -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="pillar-card h-100">
+                        <div class="d-flex gap-3 mb-3">
+                            <div class="pillar-icon">
+                                <i class="bi bi-rulers"></i>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h3 class="h5 fw-bold mb-2">NEXA Design</h3>
+                                <p class="text-secondary mb-0">
+                                    AI-powered engineering automation. Submit undesigned jobs and receive fully engineered underground designs instantly.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2 mb-4">
+                            <span class="badge-tech">Auto-engineering</span>
+                            <span class="badge-tech">Underground design</span>
+                            <span class="badge-tech">Permit-ready</span>
+                        </div>
+                        <div class="d-flex gap-3 align-items-center">
+                            <a class="btn btn-primary btn-sm" href="#product-demo">Explore Design</a>
+                            <a class="link-secondary small" href="security.html#design">See architecture</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -324,6 +350,12 @@
                                 <span>Field</span>
                             </div>
                         </div>
+                        <div class="eco-node" data-pillar="Design">
+                            <div class="eco-node-inner">
+                                <i class="bi bi-rulers"></i>
+                                <span>Design</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -371,6 +403,9 @@
                     </button>
                     <button class="btn btn-outline-primary" data-demo="compliance">
                         <i class="bi bi-shield-check me-2"></i>Compliance Check
+                    </button>
+                    <button class="btn btn-outline-primary" data-demo="design">
+                        <i class="bi bi-rulers me-2"></i>Underground Design
                     </button>
                 </div>
             </div>
@@ -661,6 +696,100 @@
                                     <button class="btn btn-warning">
                                         <i class="bi bi-bell me-2"></i>Alert Foreman
                                     </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Demo 4: NEXA Design - Underground Engineering -->
+            <div class="demo-container" id="demo-design" style="display: none;">
+                <h3 class="text-center mb-4">AI-Powered Underground Design Automation</h3>
+                <p class="text-center text-secondary mb-4">Submit an undesigned job and receive a fully engineered underground design in seconds</p>
+                
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header bg-primary text-white">
+                                <h5 class="mb-0"><i class="bi bi-upload me-2"></i>Job Input</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <label class="form-label fw-bold">Project Details</label>
+                                    <input type="text" class="form-control mb-2" value="Underground Power Line - Oak Street" readonly>
+                                    <input type="text" class="form-control mb-2" value="Distance: 2,400 ft" readonly>
+                                    <input type="text" class="form-control" value="Service Type: 3-Phase 480V" readonly>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label class="form-label fw-bold">Site Conditions</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" checked disabled>
+                                        <label class="form-check-label">Rocky soil conditions</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" checked disabled>
+                                        <label class="form-check-label">Cross 2 roadways</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" checked disabled>
+                                        <label class="form-check-label">Near water main (15ft)</label>
+                                    </div>
+                                </div>
+                                
+                                <button class="btn btn-primary w-100" id="submit-design-btn">
+                                    <i class="bi bi-magic me-2"></i>Generate Underground Design
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header bg-success text-white">
+                                <h5 class="mb-0"><i class="bi bi-check-circle me-2"></i>AI-Generated Design</h5>
+                            </div>
+                            <div class="card-body">
+                                <div id="design-loading" style="display: none;" class="text-center py-5">
+                                    <div class="spinner-border text-primary mb-3" role="status"></div>
+                                    <p>AI analyzing site conditions and generating optimal design...</p>
+                                </div>
+                                
+                                <div id="design-result" style="display: none;">
+                                    <div class="alert alert-success mb-3">
+                                        <i class="bi bi-check-circle-fill me-2"></i>Design completed in 3.2 seconds
+                                    </div>
+                                    
+                                    <h6 class="fw-bold mb-3">Engineering Specifications</h6>
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2"><i class="bi bi-check text-success me-2"></i><strong>Trench Depth:</strong> 48 inches (rocky soil adjustment)</li>
+                                        <li class="mb-2"><i class="bi bi-check text-success me-2"></i><strong>Conduit:</strong> 4" Schedule 40 PVC</li>
+                                        <li class="mb-2"><i class="bi bi-check text-success me-2"></i><strong>Cable:</strong> 3x 500 MCM + 1x 2/0 Ground</li>
+                                        <li class="mb-2"><i class="bi bi-check text-success me-2"></i><strong>Bore Required:</strong> 2 locations (60ft, 45ft)</li>
+                                        <li class="mb-2"><i class="bi bi-check text-success me-2"></i><strong>Vault Locations:</strong> 4 precast vaults</li>
+                                        <li class="mb-2"><i class="bi bi-check text-success me-2"></i><strong>Clearance:</strong> 15ft from water main ✓</li>
+                                    </ul>
+                                    
+                                    <h6 class="fw-bold mb-3">Generated Documents</h6>
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-outline-primary">
+                                            <i class="bi bi-file-pdf me-2"></i>Engineering Drawings (PDF)
+                                        </button>
+                                        <button class="btn btn-outline-primary">
+                                            <i class="bi bi-file-earmark-text me-2"></i>Material List & BOM
+                                        </button>
+                                        <button class="btn btn-outline-primary">
+                                            <i class="bi bi-clipboard-check me-2"></i>Permit Package
+                                        </button>
+                                    </div>
+                                    
+                                    <div class="mt-3 p-3 bg-light rounded">
+                                        <small class="text-muted">
+                                            <i class="bi bi-info-circle me-1"></i>
+                                            Design complies with NEC 2023, local codes, and utility standards
+                                        </small>
+                                    </div>
                                 </div>
                             </div>
                         </div>

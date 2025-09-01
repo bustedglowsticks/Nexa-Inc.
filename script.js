@@ -486,20 +486,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const demoSection = document.getElementById('product-demo');
     if (!demoSection) return;
 
-    // Demo selector buttons
-    const demoSelectors = document.querySelectorAll('.demo-selector button');
+    // Demo selector functionality
+    const demoButtons = document.querySelectorAll('[data-demo]');
     const demoContainers = document.querySelectorAll('.demo-container');
     
-    // Handle demo switching
-    demoSelectors.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const targetDemo = btn.getAttribute('data-demo');
+    demoButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const targetDemo = button.getAttribute('data-demo');
             
-            // Update button states
-            demoSelectors.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+            // Update active button
+            demoButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
             
-            // Show/hide demo containers
+            // Show corresponding demo
             demoContainers.forEach(container => {
                 if (container.id === `demo-${targetDemo}`) {
                     container.style.display = 'block';
@@ -509,6 +508,36 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+
+    // NEXA Design Demo Functionality
+    const submitDesignBtn = document.getElementById('submit-design-btn');
+    const designLoading = document.getElementById('design-loading');
+    const designResult = document.getElementById('design-result');
+    
+    if (submitDesignBtn) {
+        submitDesignBtn.addEventListener('click', () => {
+            // Show loading state
+            designLoading.style.display = 'block';
+            designResult.style.display = 'none';
+            submitDesignBtn.disabled = true;
+            submitDesignBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Processing...';
+            
+            // Simulate AI processing
+            setTimeout(() => {
+                designLoading.style.display = 'none';
+                designResult.style.display = 'block';
+                submitDesignBtn.disabled = false;
+                submitDesignBtn.innerHTML = '<i class="bi bi-magic me-2"></i>Generate Underground Design';
+                
+                // Add fade-in animation
+                designResult.style.opacity = '0';
+                designResult.style.transition = 'opacity 0.5s';
+                setTimeout(() => {
+                    designResult.style.opacity = '1';
+                }, 50);
+            }, 3200); // 3.2 seconds as mentioned in the design
+        });
+    }
 
     // Job Package Demo Elements
     const startJpBtn = document.getElementById('start-jp-demo');
