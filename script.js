@@ -517,13 +517,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function nextSupplyStep(currentStep) {
-        const nextStep = currentStep + 1;
-        if (nextStep <= 3) {
-            showSupplyStep(nextStep);
-        }
-    }
+    // Make functions globally accessible for HTML onclick attributes
+    window.showSupplyStep = showSupplyStep;
+    window.showSupplyDemo = showSupplyDemo;
+    window.nextSupplyStep = nextSupplyStep;
 });
+
+function nextSupplyStep(currentStep) {
+    const nextStep = currentStep + 1;
+    if (nextStep <= 3) {
+        showSupplyStep(nextStep);
+    }
+}
 
 // Service selection dropdown enhancement
 const serviceSelect = document.getElementById('service');
