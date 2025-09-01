@@ -197,10 +197,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Contact Form */
 .contact-form {
-    background: white;
+    background: rgba(20, 20, 30, 0.8);
     padding: 40px;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(47, 122, 254, 0.2);
+    backdrop-filter: blur(10px);
 }
 
 @media (max-width: 768px) {
@@ -297,20 +299,48 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .pillar-card {
-    background: white;
+    background: rgba(20, 20, 30, 0.8);
     border-radius: 12px;
     padding: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
     height: 100%;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(47, 122, 254, 0.2);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
+}
+
+.pillar-card li {
+    padding: 8px 0;
+    color: rgba(255, 255, 255, 0.7);
+    padding-left: 20px;
     position: relative;
-    overflow: hidden;
+}
+
+.pillar-card li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent-electric-blue);
+    font-weight: bold;
+    filter: brightness(1.2);
+}
+
+.pillar-card ul {
+    list-style: none;
+    padding: 0;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 @media (max-width: 768px) {
     .pillar-card {
         padding: 20px;
         margin-bottom: 20px;
+    }
+    
+    .pillar-card h3 {
+        color: var(--accent-electric-blue);
+        margin-bottom: 20px;
+        font-size: 1.5rem;
     }
     
     .pillar-icon {
@@ -320,8 +350,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .pillar-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(47, 122, 254, 0.2);
+    box-shadow: 0 10px 30px rgba(47, 122, 254, 0.4);
     border-color: var(--accent-electric-blue);
+    background: rgba(20, 20, 30, 0.95);
 }
 
 .pillar-icon {
@@ -808,19 +839,26 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--glow-primary);
 }
 
-.form-control {
-    background-color: var(--bg-dark-slate);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 12px 16px;
-    color: var(--text-muted-beige);
-    transition: all 0.3s ease;
+.form-label {
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 8px;
 }
 
-.form-control:focus {
+.form-control, .form-select {
+    background: rgba(10, 10, 10, 0.6);
+    border: 1px solid rgba(47, 122, 254, 0.3);
+    border-radius: 8px;
+    padding: 12px;
+    transition: all 0.3s ease;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.form-control:focus, .form-select:focus {
+    background: rgba(10, 10, 10, 0.8);
     border-color: var(--accent-electric-blue);
-    box-shadow: 0 0 0 3px rgba(47, 122, 254, 0.25);
-    background-color: var(--bg-charcoal);
+    box-shadow: 0 0 0 0.2rem rgba(47, 122, 254, 0.25);
+    color: white;
 }
 
 /* Stats Grid */
