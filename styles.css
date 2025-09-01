@@ -791,13 +791,84 @@ h1, h2, h3, h4, h5, h6 {
 /* ----------------- 8. CTA Section ----------------- */
 /* Styling for the Call-to-Action section. */
 .cta-section {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
     color: white;
     position: relative;
-    margin-top: 80px;
+    margin-top: 60px;
     overflow: hidden;
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
+    border-top: 1px solid rgba(0, 123, 255, 0.2);
+    border-bottom: 1px solid rgba(0, 123, 255, 0.2);
+    padding: 60px 0;
+}
+
+.cta-carousel-wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 20px 0;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) rgba(255, 255, 255, 0.1);
+}
+
+.cta-carousel-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.cta-carousel-wrapper::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.cta-carousel-wrapper::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+
+.cta-carousel {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 10px;
+    min-width: fit-content;
+}
+
+.cta-feature-card {
+    flex: 0 0 200px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 123, 255, 0.3);
+    border-radius: 12px;
+    padding: 25px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.cta-feature-card:hover {
+    transform: translateY(-5px);
+    background: rgba(0, 123, 255, 0.1);
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 30px rgba(0, 123, 255, 0.3);
+}
+
+.cta-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .cta-section {
+        padding: 40px 0;
+    }
+    
+    .cta-feature-card {
+        flex: 0 0 160px;
+    }
 }
 
 /* Hero Section */
