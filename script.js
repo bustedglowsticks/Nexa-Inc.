@@ -468,6 +468,12 @@ document.addEventListener('DOMContentLoaded', () => {
             demoBtn.onclick = () => {
                 showFieldVideo();
             };
+        } else if (data.title === 'NEXA Supply Chain') {
+            demoBtn.style.display = 'inline-block';
+            demoBtn.textContent = 'View Demo';
+            demoBtn.onclick = () => {
+                showSupplyDemo();
+            };
         } else {
             demoBtn.style.display = 'none';
             demoBtn.textContent = 'View Demo';
@@ -478,13 +484,44 @@ document.addEventListener('DOMContentLoaded', () => {
         bsModal.show();
     }
 
-    function showFieldVideo() {
+    function showSupplyDemo() {
         const modal = document.getElementById('pillarModal');
         bootstrap.Modal.getInstance(modal).hide();
         
-        const videoModal = document.getElementById('fieldVideoModal');
-        const bsVideoModal = new bootstrap.Modal(videoModal);
-        bsVideoModal.show();
+        const supplyModal = document.getElementById('supplyDemoModal');
+        const bsSupplyModal = new bootstrap.Modal(supplyModal);
+        bsSupplyModal.show();
+        
+        // Reset demo to step 1
+        showSupplyStep(1);
+    }
+
+    function showSupplyStep(step) {
+        const steps = document.querySelectorAll('.supply-step');
+        const contents = document.querySelectorAll('.supply-content');
+        
+        steps.forEach((stepEl, index) => {
+            if (index === step - 1) {
+                stepEl.classList.add('active');
+            } else {
+                stepEl.classList.remove('active');
+            }
+        });
+        
+        contents.forEach((content, index) => {
+            if (index === step - 1) {
+                content.classList.add('active');
+            } else {
+                content.classList.remove('active');
+            }
+        });
+    }
+
+    function nextSupplyStep(currentStep) {
+        const nextStep = currentStep + 1;
+        if (nextStep <= 3) {
+            showSupplyStep(nextStep);
+        }
     }
 });
 
